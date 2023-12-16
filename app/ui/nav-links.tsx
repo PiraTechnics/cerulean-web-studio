@@ -1,5 +1,7 @@
-//import { usePathname } from "next/navigation";
-//import clsx from "clsx";
+"use client";
+
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 import Link from "next/link";
 
 const links = [
@@ -11,16 +13,22 @@ const links = [
 ];
 
 export const NavLinks = () => {
-	//const pathName = usePathname();
+	const pathname = usePathname();
 
 	return (
-		<div className="flex gap-6">
+		<div className="flex gap-4 lg:gap-6 max-md:hidden">
 			{links.map((link) => {
 				return (
 					<Link
 						key={link.name}
-						href={link.name}
-						className="text-slate-500 text-xl font-semibold"
+						href={link.href}
+						className={clsx(
+							"text-slate-500 text-lg lg:text-xl py-5 font-semibold hover:text-[#66e4e9]",
+							{
+								"text-[#00c4cc] border-b-4 border-[#00c4cc]":
+									pathname === link.href,
+							}
+						)}
 					>
 						{link.name}
 					</Link>
