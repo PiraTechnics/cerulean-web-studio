@@ -1,12 +1,12 @@
 import Image from "next/image";
+import Logo from "@/public/cerulean.svg";
 
-export const CeruleanLogo = ({ size = 75 }) => {
+export const CeruleanLogo = () => {
 	return (
 		<Image
-			src="/cerulean.svg"
-			alt={"Minimalist Wave Icon with text"}
-			width={size * 3}
-			height={size}
+			src={Logo}
+			alt="Minimalist Wave Icon with text"
+			className="md:w-52 w-44 py-0.5"
 		/>
 	);
 };

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import homeHero from "../../public/matt-hardy-6ArTTluciuA-unsplash.jpg";
+import homeHero from "@/public/matt-hardy-6ArTTluciuA-unsplash.jpg";
 
 export default function Home() {
 	return (
@@ -7,7 +7,7 @@ export default function Home() {
 			<section className="flex justify-center items-center">
 				<div
 					id="home-card"
-					className="border border-slate-500 bg-slate-600 relative text-center w-full lg:mt-4 "
+					className="border border-slate-500 bg-slate-600 relative text-center w-full lg:mt-4"
 				>
 					<Image
 						id="home-card-image"

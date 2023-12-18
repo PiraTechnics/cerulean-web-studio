@@ -1,13 +1,15 @@
-import { SunIcon } from "@heroicons/react/24/outline";
-import { Bars3Icon } from "@heroicons/react/24/outline";
+"use client";
 
-const iconStyle = "h-9 w-9 text-black";
+import { BurgerBar } from "./burger-bar";
+import { Toggle } from "./toggle";
 
 export const ToolBar = () => {
 	return (
-		<div className="px-4 flex gap-2">
-			<Bars3Icon className={`${iconStyle} md:hidden`} />
-			<SunIcon className={iconStyle} />
+		<div className="px-4 flex gap-4">
+			<div className="md:hidden pt-1.5">
+				<BurgerBar />
+			</div>
+			<Toggle />
 		</div>
 	);
 };

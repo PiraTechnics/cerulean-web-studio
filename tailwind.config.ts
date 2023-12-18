@@ -11,6 +11,7 @@ const config: Config = {
 			colors: {
 				"cws-bg-1": "#00c4cc",
 				"cws-bg-2": "#0a1a44",
+				"cws-primary": "#00b1f2",
 			},
 		},
 	},
