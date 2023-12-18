@@ -1,8 +1,45 @@
-//import Image from "next/image";
+import Image from "next/image";
+import homeHero from "../../public/matt-hardy-6ArTTluciuA-unsplash.jpg";
 
 export default function Home() {
 	return (
-		<div>You are Home!</div>
+		<article className="">
+			<section className="flex justify-center items-center">
+				<div
+					id="home-card"
+					className="border border-slate-500 bg-slate-600 relative text-center w-full lg:mt-4 "
+				>
+					<Image
+						id="home-card-image"
+						src={homeHero}
+						alt="Lightly rippling ocean waves"
+						placeholder="blur"
+						//fill
+						className="opacity-60 object-cover"
+					/>
+					<div
+						id="home-card-text"
+						className="absolute inset-0 top-2/4 text-4xl"
+					>
+						Home
+					</div>
+				</div>
+				{/* <p className="text-5xl font-semibold">Welcome Home</p> */}
+			</section>
+		</article>
+
+		/* 		<div className="relative text-center flex">
+			<Image
+				src={homeHero}
+				alt="Lightly rippling ocean waves"
+				placeholder="blur"
+				className=""
+			/>
+			<div className="absolute inset-0 top-2/4 md:text-4xl max-md:text-3xl text-neutral-content">
+				Home
+			</div>
+		</div> */
+
 		/*     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
