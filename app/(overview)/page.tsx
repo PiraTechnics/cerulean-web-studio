@@ -8,7 +8,6 @@ export default function Home() {
 			<Image
 				src={homeHero}
 				alt="Lightly rippling ocean waves"
-				placeholder="blur"
 				className="opacity-70 object-cover"
 			/>
 			<div className="absolute inset-0 top-2/4 overflow-hidden">
