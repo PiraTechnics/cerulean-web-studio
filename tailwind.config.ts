@@ -13,6 +13,29 @@ const config: Config = {
 				"cws-bg-2": "#0a1a44",
 				"cws-primary": "#00b1f2",
 			},
+			keyframes: {
+				slideFromLeft: {
+					"0%": { transform: "translateX(-250px)", opacity: "0" },
+					"100%": { transform: "translateX(0)", opacity: "1" },
+				},
+				slideFromRight: {
+					"0%": {
+						transform: "translateX(250px)",
+						opacity: "0",
+						display: "none",
+					},
+					"100%": { transform: "translateX(0)", opacity: "1" },
+				},
+				fadeIn: {
+					"0%": { opacity: "0" },
+					"100%": { opacity: "1" },
+				},
+			},
+			animation: {
+				slideFromLeft: "slideFromLeft 1.5s ease-in-out",
+				slideFromRight: "slideFromRight 1.5s ease-in-out",
+				fadeIn: "fadeIn 2s ease-in-out",
+			},
 		},
 	},
 	plugins: [],

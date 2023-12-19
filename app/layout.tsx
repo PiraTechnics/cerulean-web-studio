@@ -21,7 +21,9 @@ export default function RootLayout({
 				className={`${inter.className} bg-gradient-to-br from-cws-bg-1 to-cws-bg-2`}
 			>
 				<HeaderNav />
-				<main className="min-h-screen max-w-screen-xl mx-auto">{children}</main>
+				<main className="min-h-screen max-w-screen-2xl mx-auto">
+					{children}
+				</main>
 			</body>
 		</html>
 	);
