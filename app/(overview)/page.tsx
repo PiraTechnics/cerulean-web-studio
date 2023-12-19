@@ -15,11 +15,12 @@ export default function Home() {
 
 	return (
 		<>
-			<section className=" text-center text-slate-100">
-				<div className="relative">
+			<section className="text-center text-slate-100">
+				<div className="relative h-[500px] md:h-[700px] lg:h-[900px]">
 					<Image
 						onLoad={triggerAnimation}
 						src={homeHero}
+						fill
 						alt="Lightly rippling ocean waves"
 						className="opacity-80 object-cover"
 					/>
