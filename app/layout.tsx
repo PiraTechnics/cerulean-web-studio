@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Libre_Baskerville } from "next/font/google";
+import { Inter, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 import { HeaderNav } from "./ui/header-nav";
 
-const inter = Inter({ subsets: ["latin"] });
-const baskerville = Libre_Baskerville({
+export const inter = Inter({ subsets: ["latin"], display: "swap" });
+export const baskerville = Libre_Baskerville({
 	subsets: ["latin"],
 	weight: ["400", "700"],
+	display: "swap",
 });
 
-const fontMain = baskerville;
+const fontMain = inter;
 
 export const metadata: Metadata = {
 	title: "Cerulean Web Studio",
