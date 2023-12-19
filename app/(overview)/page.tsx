@@ -15,18 +15,18 @@ export default function Home() {
 
 	return (
 		<>
-			<section className="bg-slate-800 text-center text-slate-100">
+			<section className=" text-center text-slate-100">
 				<div className="relative">
 					<Image
 						onLoad={triggerAnimation}
 						src={homeHero}
 						alt="Lightly rippling ocean waves"
-						className="opacity-70 object-cover"
+						className="opacity-80 object-cover"
 					/>
 					<div className="absolute inset-0 top-2/4 overflow-hidden">
 						<div
 							className={clsx(
-								"text-5xl",
+								"text-2xl sm:text-3xl md:text-5xl",
 								{ invisible: !loaded },
 								{ "animate-slideFromLeft": loaded }
 							)}
@@ -35,7 +35,7 @@ export default function Home() {
 						</div>
 						<div
 							className={clsx(
-								"text-3xl",
+								"text-lg sm:text-xl md:text-3xl",
 								{ invisible: !loaded },
 								{ "animate-slideFromRight": loaded }
 							)}
@@ -44,7 +44,7 @@ export default function Home() {
 						</div>
 						<button
 							className={clsx(
-								"mt-8 mx-auto flex transform items-center rounded-full bg-gradient-to-r from-cws-primary to-cws-bg-1 px-3 py-2 font-medium text-white transition hover:scale-110 ring-1 ring-cws-bg-1 hover:ring-cws-bg-1/50 focus:outline-none",
+								"mt-2 sm:mt-8 mx-auto flex transform items-center rounded-full bg-gradient-to-r from-cws-primary to-cws-bg-1 px-3 py-2 font-medium text-white transition hover:scale-110 ring-1 ring-cws-bg-1 hover:ring-cws-bg-1/50 focus:outline-none",
 								{ invisible: !loaded },
 								{ "animate-fadeIn": loaded }
 							)}

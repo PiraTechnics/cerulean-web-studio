@@ -15,12 +15,12 @@ const config: Config = {
 			},
 			keyframes: {
 				slideFromLeft: {
-					"0%": { transform: "translateX(-250px)", opacity: "0" },
+					"0%": { transform: "translateX(-25%)", opacity: "0" },
 					"100%": { transform: "translateX(0)", opacity: "1" },
 				},
 				slideFromRight: {
 					"0%": {
-						transform: "translateX(250px)",
+						transform: "translateX(25%)",
 						opacity: "0",
 						display: "none",
 					},

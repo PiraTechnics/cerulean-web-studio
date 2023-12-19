@@ -4,8 +4,8 @@ import { ToolBar } from "./toolbar";
 
 export const HeaderNav = () => {
 	return (
-		<header className="fixed w-screen top-0 z-10 bg-white h-fit shadow-lg border-b border-e rounded-md border-slate-400">
-			<nav className="flex px-2 items-center justify-between h-full max-w-screen-2xl mx-auto">
+		<header className="fixed w-full max-w-screen-2xl top-0 z-10 bg-white/40 h-fit shadow-xl text-black">
+			<nav className="flex px-2 items-center justify-between h-full mx-auto">
 				<CeruleanLogo />
 				<NavLinks />
 				<ToolBar />
