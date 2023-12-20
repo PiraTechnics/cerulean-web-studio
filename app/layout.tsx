@@ -3,14 +3,17 @@ import { Inter, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 import { HeaderNav } from "./ui/header-nav";
 
-const inter = Inter({ subsets: ["latin"], display: "swap" });
-export const baskerville = Libre_Baskerville({
+const inter = Inter({
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-inter",
+});
+const baskerville = Libre_Baskerville({
 	subsets: ["latin"],
 	weight: ["400", "700"],
 	display: "swap",
+	variable: "--font-baskerville",
 });
-
-const fontMain = inter;
 
 export const metadata: Metadata = {
 	title: "Cerulean Web Studio",
@@ -26,7 +29,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${fontMain.className} bg-gradient-to-br from-cws-bg-1 to-cws-bg-2`}
+				className={`${inter.variable} ${baskerville.variable} bg-gradient-to-br from-cws-bg-1 to-cws-bg-2`}
 			>
 				<main className="mx-auto min-h-screen max-w-screen-2xl ">
 					<HeaderNav />

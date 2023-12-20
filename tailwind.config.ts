@@ -13,6 +13,10 @@ const config: Config = {
 				"cws-bg-2": "#0a1a44",
 				"cws-primary": "#00b1f2",
 			},
+			fontFamily: {
+				sans: ["var(--font-inter)"],
+				serif: ["var(--font-baskerville)"],
+			},
 			keyframes: {
 				slideFromLeft: {
 					"0%": { transform: "translateX(-25%)", opacity: "0" },
