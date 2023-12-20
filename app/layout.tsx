@@ -3,7 +3,7 @@ import { Inter, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 import { HeaderNav } from "./ui/header-nav";
 
-export const inter = Inter({ subsets: ["latin"], display: "swap" });
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 export const baskerville = Libre_Baskerville({
 	subsets: ["latin"],
 	weight: ["400", "700"],

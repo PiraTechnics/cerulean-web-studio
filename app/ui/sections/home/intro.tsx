@@ -5,8 +5,8 @@ import FinishedImg from "@/public/finished.svg";
 
 export const Intro = () => {
 	return (
-		<section className="bg-slate-100">
-			<div className=" flex flex-col sm:flex-row p-12 gap-4 md:gap-10 lg:gap-16 xl:gap-32 text-center">
+		<section className="">
+			<div className=" flex flex-col sm:flex-row p-12 gap-4 md:gap-10 lg:gap-16 xl:gap-32 text-center text-slate-300">
 				<div className="flex flex-col">
 					<Image src={IdeaImg} alt="communicating and idea" />
 					<div className="text-2xl font-bold">1.</div>
