@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
-import { HeaderNav } from "./ui/header-nav";
+import { Header } from "./ui/sections/header";
+import { Footer } from "./ui/sections/footer";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -32,8 +33,9 @@ export default function RootLayout({
 				className={`${inter.variable} ${baskerville.variable} bg-gradient-to-br from-cws-bg-1 to-cws-bg-2`}
 			>
 				<main className="mx-auto min-h-screen max-w-screen-2xl ">
-					<HeaderNav />
+					<Header />
 					{children}
+					<Footer />
 				</main>
 			</body>
 		</html>
