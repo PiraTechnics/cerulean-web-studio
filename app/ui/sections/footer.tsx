@@ -2,6 +2,7 @@ import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import Facebook from "@/app/ui/icons/facebook";
 import Instagram from "@/app/ui/icons/instagram";
 import LinkedIn from "@/app/ui/icons/linkedin";
+import Bluesky from "@/app/ui/icons/bluesky";
 import FullLogo from "@/public/cerulean.svg";
 
 import Link from "next/link";
@@ -19,6 +20,7 @@ export const Footer = () => {
 	const socials = [
 		{ name: "LinkedIn", href: "#", icon: <LinkedIn /> },
 		{ name: "Facebook", href: "#", icon: <Facebook /> },
+		{ name: "Bluesky", href: "#", icon: <Bluesky /> },
 		{ name: "Instagram", href: "#", icon: <Instagram /> },
 	];
 
@@ -63,7 +65,7 @@ export const Footer = () => {
 				</div>
 				<div id="footer-location" className="justify-self-center text-center">
 					<div className="text-2xl my-4">Location</div>
-					<div>Los Angeles</div>
+					<div className="text-lg">Los Angeles</div>
 					<p>420 Nowhere Street, Suite 690</p>
 					<p>Sherman Oaks, CA 91411</p>
 				</div>
@@ -82,13 +84,15 @@ export const Footer = () => {
 							);
 						})}
 					</div>
-					<div className="mb-2">
-						<PhoneIcon width={24} className="inline me-2" />
-						{contact.Phone}
-					</div>
-					<div>
-						<EnvelopeIcon width={24} className="inline me-2" />
-						{contact.Email}
+					<div className="ps-6 text-start">
+						<div className="mb-2">
+							<PhoneIcon width={24} className="inline me-2" />
+							{contact.Phone}
+						</div>
+						<div className="">
+							<EnvelopeIcon width={24} className="inline me-2" />
+							{contact.Email}
+						</div>
 					</div>
 				</div>
 			</div>
