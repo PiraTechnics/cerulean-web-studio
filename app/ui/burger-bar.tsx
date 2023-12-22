@@ -9,6 +9,8 @@ export const BurgerBar = () => {
 
 	return (
 		<button
+			id="al"
+			aria-label="Mobile Menu Button"
 			onClick={handleClick}
 			className="flex flex-col justify-center items-center"
 		>

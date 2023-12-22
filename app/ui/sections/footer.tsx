@@ -54,6 +54,7 @@ export const Footer = () => {
 								<li key={link.name}>
 									<Link
 										href={link.href}
+										aria-label={link.name}
 										className="text-xl lg:text-lg py-1 hover:underline"
 									>
 										{link.name}
@@ -77,6 +78,7 @@ export const Footer = () => {
 								<Link
 									key={link.name}
 									href={link.href}
+									aria-label={link.name}
 									className="p-1.5 rounded-full bg-slate-700 hover:bg-[#00c4cc]"
 								>
 									{link.icon}
@@ -89,7 +91,7 @@ export const Footer = () => {
 							<PhoneIcon width={24} className="inline me-2" />
 							{contact.Phone}
 						</div>
-						<div className="">
+						<div>
 							<EnvelopeIcon width={24} className="inline me-2" />
 							{contact.Email}
 						</div>
