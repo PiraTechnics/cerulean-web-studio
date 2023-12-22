@@ -30,7 +30,7 @@ export const Footer = () => {
 	const today = new Date();
 
 	return (
-		<footer className="bg-slate-300/40 py-4 text-white">
+		<footer className="bg-slate-300/40 py-4 text-white rounded-t-lg">
 			<div
 				id="footer-content"
 				className="grid lg:grid-cols-4 lg:grid-rows-1 md:grid-cols-2 md:grid-rows-2 grid-rows-4 grid-cols-1 my-2"
@@ -39,7 +39,7 @@ export const Footer = () => {
 					<div className="mb-4 p-1 mx-auto rounded-full bg-white/60 w-56 md:w-48 lg:w-40">
 						<Image src={FullLogo} alt="Cerulean Web Studio" />
 					</div>
-					<p className="px-4 text-lg sm:px-32 md:px-16 lg:text-sm lg:px-10">
+					<p className="px-8 sm:px-32 md:px-16 lg:text-sm lg:px-10">
 						We are a full service web agency passionate about delivering an
 						exceptional experience for creatives and small businesses looking
 						for web solutions.
