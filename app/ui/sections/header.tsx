@@ -1,4 +1,4 @@
-import { CeruleanLogo } from "../cerulean-logo";
+import { CeruleanLogo } from "../icons/cerulean-logo";
 import { NavLinks } from "../nav-links";
 import { ToolBar } from "../toolbar";
 

@@ -1,7 +1,7 @@
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
-import Facebook from "@/public/fb-white.svg";
-import Instagram from "@/public/ig-white.svg";
-import LinkedIn from "@/public/li-white.svg";
+import Facebook from "@/app/ui/icons/facebook";
+import Instagram from "@/app/ui/icons/instagram";
+import LinkedIn from "@/app/ui/icons/linkedin";
 import FullLogo from "@/public/cerulean.svg";
 
 import Link from "next/link";
@@ -17,9 +17,9 @@ export const Footer = () => {
 	];
 
 	const socials = [
-		{ name: "LinkedIn", href: "#", icon: LinkedIn },
-		{ name: "Facebook", href: "#", icon: Facebook },
-		{ name: "Instagram", href: "#", icon: Instagram },
+		{ name: "LinkedIn", href: "#", icon: <LinkedIn /> },
+		{ name: "Facebook", href: "#", icon: <Facebook /> },
+		{ name: "Instagram", href: "#", icon: <Instagram /> },
 	];
 
 	const contact = {
@@ -52,7 +52,7 @@ export const Footer = () => {
 								<li key={link.name}>
 									<Link
 										href={link.href}
-										className="text-xl lg:text-lg py-1 hover:underline "
+										className="text-xl lg:text-lg py-1 hover:underline"
 									>
 										{link.name}
 									</Link>
@@ -75,9 +75,9 @@ export const Footer = () => {
 								<Link
 									key={link.name}
 									href={link.href}
-									className="p-1.5 rounded-full bg-slate-700"
+									className="p-1.5 rounded-full bg-slate-700 hover:bg-[#00c4cc]"
 								>
-									<Image src={link.icon} alt={link.name} />
+									{link.icon}
 								</Link>
 							);
 						})}
@@ -94,7 +94,7 @@ export const Footer = () => {
 			</div>
 			<hr className="mx-8" />
 			<div id="footer-copyright" className="text-sm text-center mt-4">
-				&copy; {today.getFullYear()} - Cerululean Web Studio
+				&copy; {today.getFullYear()} - Cerulean Web Studio
 			</div>
 		</footer>
 	);
