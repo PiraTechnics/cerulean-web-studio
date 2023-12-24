@@ -3,6 +3,7 @@ import { Inter, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 import { Header } from "./ui/sections/header";
 import { Footer } from "./ui/sections/footer";
+import { Providers } from "./providers";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -28,15 +29,17 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<body
 				className={`${inter.variable} ${baskerville.variable} bg-gradient-to-br from-cws-bg-1 to-cws-bg-2`}
 			>
-				<main className="mx-auto min-h-screen max-w-screen-2xl ">
-					<Header />
-					{children}
-					<Footer />
-				</main>
+				<Providers>
+					<main className="mx-auto min-h-screen max-w-screen-2xl ">
+						<Header />
+						{children}
+						<Footer />
+					</main>
+				</Providers>
 			</body>
 		</html>
 	);
