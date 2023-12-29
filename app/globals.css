@@ -15,3 +15,8 @@
 		--background-end-color: #0a1a44;
 	}
 } */
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding: 6rem;
+}

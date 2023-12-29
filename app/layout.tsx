@@ -34,7 +34,7 @@ export default function RootLayout({
 				className={`${inter.variable} ${baskerville.variable} bg-gradient-to-br from-cws-bg-1 to-cws-bg-2`}
 			>
 				<Providers>
-					<main className="mx-auto min-h-screen max-w-screen-2xl ">
+					<main className="mx-auto min-h-screen max-w-screen-2xl">
 						<Header />
 						{children}
 						<Footer />
