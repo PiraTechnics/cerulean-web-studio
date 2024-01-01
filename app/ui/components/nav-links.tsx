@@ -8,7 +8,8 @@ const links = [
 	{ name: "Home", href: "/" },
 	{ name: "About", href: "/about" },
 	{ name: "Services", href: "/services" },
-	{ name: "Testimonials", href: "/testimonials" },
+	{ name: "Pricing", href: "/pricing" },
+	{ name: "Portfolio", href: "/portfolio" },
 	{ name: "Contact", href: "/contact" },
 ];
 
@@ -23,7 +24,7 @@ export const NavLinks = () => {
 						key={link.name}
 						href={link.href}
 						className={clsx(
-							"font-sans text-lg xl:text-xl py-5 font-semibold hover:text-[#66e4e9]",
+							"font-sans lg:text-lg xl:text-xl py-5 font-semibold hover:text-[#66e4e9]",
 							{
 								"text-[#00c4cc] border-b-4 border-[#00c4cc]":
 									pathname === link.href,

@@ -1,6 +1,6 @@
 import { CeruleanLogo } from "../icons/cerulean-logo";
-import { NavLinks } from "../nav-links";
-import { ToolBar } from "../toolbar";
+import { NavLinks } from "../components/nav-links";
+import { ToolBar } from "../components/toolbar";
 
 export const Header = () => {
 	return (
