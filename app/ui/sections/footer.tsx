@@ -7,27 +7,15 @@ import FullLogo from "@/public/cerulean.svg";
 
 import Link from "next/link";
 import Image from "next/image";
+import { contactInformation, pageLinks } from "@/app/constants";
 
 export const Footer = () => {
-	const links = [
-		{ name: "Home", href: "/" },
-		{ name: "About", href: "/about" },
-		{ name: "Services", href: "/services" },
-		{ name: "Testimonials", href: "/testimonials" },
-		{ name: "Contact", href: "/contact" },
-	];
-
 	const socials = [
 		{ name: "LinkedIn", href: "#", icon: <LinkedIn /> },
 		{ name: "Facebook", href: "#", icon: <Facebook /> },
 		{ name: "Bluesky", href: "#", icon: <Bluesky /> },
 		{ name: "Instagram", href: "#", icon: <Instagram /> },
 	];
-
-	const contact = {
-		Email: "fakename@testmail.net",
-		Phone: "(555) 555-5555",
-	};
 
 	const today = new Date();
 
@@ -49,7 +37,7 @@ export const Footer = () => {
 				</div>
 				<div id="footer-nav" className="place-self-center">
 					<ul className="list-none text-center">
-						{links.map((link) => {
+						{pageLinks.map((link) => {
 							return (
 								<li key={link.name}>
 									<Link
@@ -66,9 +54,12 @@ export const Footer = () => {
 				</div>
 				<div id="footer-location" className="justify-self-center text-center">
 					<div className="text-2xl my-4">Location</div>
-					<div className="text-lg">Los Angeles</div>
-					<p>420 Nowhere Street, Suite 690</p>
-					<p>Sherman Oaks, CA 91411</p>
+					<div className="text-lg">{contactInformation.location}</div>
+					<p>{contactInformation.address}</p>
+					<p>
+						{contactInformation.city}, {contactInformation.state}{" "}
+						{contactInformation.zip}
+					</p>
 				</div>
 				<div id="footer-socials" className="justify-self-center text-center">
 					<div className="text-2xl my-4">Contact</div>
@@ -89,11 +80,11 @@ export const Footer = () => {
 					<div className="ps-6 text-start">
 						<div className="mb-2">
 							<PhoneIcon width={24} className="inline me-2" />
-							{contact.Phone}
+							{contactInformation.phone}
 						</div>
 						<div>
 							<EnvelopeIcon width={24} className="inline me-2" />
-							{contact.Email}
+							{contactInformation.email}
 						</div>
 					</div>
 				</div>

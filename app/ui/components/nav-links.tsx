@@ -1,24 +1,16 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { pageLinks } from "@/app/constants";
 import clsx from "clsx";
 import Link from "next/link";
-
-const links = [
-	{ name: "Home", href: "/" },
-	{ name: "About", href: "/about" },
-	{ name: "Services", href: "/services" },
-	{ name: "Pricing", href: "/pricing" },
-	{ name: "Portfolio", href: "/portfolio" },
-	{ name: "Contact", href: "/contact" },
-];
 
 export const NavLinks = () => {
 	const pathname = usePathname();
 
 	return (
 		<div className="flex gap-4 lg:gap-6 max-md:hidden">
-			{links.map((link) => {
+			{pageLinks.map((link) => {
 				return (
 					<Link
 						key={link.name}
