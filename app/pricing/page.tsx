@@ -1,3 +1,9 @@
+import { Packages } from "@/app/ui/sections/pricing/packages";
+
 export default function Pricing() {
-	return <div>Pricing</div>;
+	return (
+		<article>
+			<Packages />
+		</article>
+	);
 }
