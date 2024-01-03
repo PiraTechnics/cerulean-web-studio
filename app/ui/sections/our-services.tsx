@@ -9,40 +9,40 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
+const servicesKey = [
+	{ name: "Web Design", link: "design", icon: <PaintBrushIcon /> },
+	{
+		name: "Mobile Optimization",
+		link: "mobile",
+		icon: <DevicePhoneMobileIcon />,
+	},
+	{
+		name: "Ecommerce Integration",
+		link: "ecommerce",
+		icon: <BanknotesIcon />,
+	},
+	{
+		name: "Search Engine Optimization",
+		link: "seo",
+		icon: <PresentationChartLineIcon />,
+	},
+	{
+		name: "Application Development",
+		link: "development",
+		icon: <CodeBracketIcon />,
+	},
+	{ name: "Managed Hosting", link: "hosting", icon: <CircleStackIcon /> },
+	{
+		name: "Updates & Maintainence",
+		link: "maintainence",
+		icon: <WrenchScrewdriverIcon />,
+	},
+];
+
+const textPlaceholder =
+	"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat augue purus, id tincidunt ex volutpat a. Maecenas id tortor et ex eleifend sollicitudin ultricies non eros. Suspendisse sed hendrerit massa, vel interdum diam. Integer pharetra dignissim sodales. Cras luctus aliquet consectetur. Cras luctus et turpis nec consectetur. Quisque ut odio in eros venenatis ullamcorper. Duis tincidunt lacus quis risus pellentesque, eget convallis mauris accumsan. Nunc ultrices interdum ligula et consequat. Donec justo mauris, aliquet nec dolor non, blandit imperdiet justo. Etiam nibh elit, efficitur quis tellus sed, gravida imperdiet magna. Phasellus consequat elit justo, consectetur ornare tortor consequat eu. Morbi eleifend sapien aliquet ullamcorper cursus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec quis ex sit amet diam pulvinar rutrum vitae vitae dolor. Donec magna augue, molestie ut neque eu, vehicula posuere diam. Proin rutrum lorem quis leo gravida vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi mollis libero eu tellus rhoncus convallis. Etiam ullamcorper ut ipsum quis feugiat. Duis ut diam lorem. Sed consectetur, urna vitae sollicitudin congue, tellus leo viverra metus, at luctus libero tortor ac est. Donec efficitur tincidunt velit eu imperdiet. Vivamus pharetra cursus sagittis.";
+
 export const OurServices = () => {
-	const servicesKey = [
-		{ name: "Web Design", link: "design", icon: <PaintBrushIcon /> },
-		{
-			name: "Mobile Optimization",
-			link: "mobile",
-			icon: <DevicePhoneMobileIcon />,
-		},
-		{
-			name: "Ecommerce Integration",
-			link: "ecommerce",
-			icon: <BanknotesIcon />,
-		},
-		{
-			name: "Search Engine Optimization",
-			link: "seo",
-			icon: <PresentationChartLineIcon />,
-		},
-		{
-			name: "Application Development",
-			link: "development",
-			icon: <CodeBracketIcon />,
-		},
-		{ name: "Managed Hosting", link: "hosting", icon: <CircleStackIcon /> },
-		{
-			name: "Updates & Maintainence",
-			link: "maintainence",
-			icon: <WrenchScrewdriverIcon />,
-		},
-	];
-
-	const textPlaceholder =
-		"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat augue purus, id tincidunt ex volutpat a. Maecenas id tortor et ex eleifend sollicitudin ultricies non eros. Suspendisse sed hendrerit massa, vel interdum diam. Integer pharetra dignissim sodales. Cras luctus aliquet consectetur. Cras luctus et turpis nec consectetur. Quisque ut odio in eros venenatis ullamcorper. Duis tincidunt lacus quis risus pellentesque, eget convallis mauris accumsan. Nunc ultrices interdum ligula et consequat. Donec justo mauris, aliquet nec dolor non, blandit imperdiet justo. Etiam nibh elit, efficitur quis tellus sed, gravida imperdiet magna. Phasellus consequat elit justo, consectetur ornare tortor consequat eu. Morbi eleifend sapien aliquet ullamcorper cursus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec quis ex sit amet diam pulvinar rutrum vitae vitae dolor. Donec magna augue, molestie ut neque eu, vehicula posuere diam. Proin rutrum lorem quis leo gravida vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi mollis libero eu tellus rhoncus convallis. Etiam ullamcorper ut ipsum quis feugiat. Duis ut diam lorem. Sed consectetur, urna vitae sollicitudin congue, tellus leo viverra metus, at luctus libero tortor ac est. Donec efficitur tincidunt velit eu imperdiet. Vivamus pharetra cursus sagittis.";
-
 	return (
 		<section className="text-slate-100 px-8">
 			<div className="flex flex-col md:flex-row gap-8  xl:px-32 2xl:px-64 items-center">

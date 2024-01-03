@@ -9,16 +9,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { contactInformation, pageLinks } from "@/app/constants";
 
+const socials = [
+	{ name: "LinkedIn", href: "#", icon: <LinkedIn /> },
+	{ name: "Facebook", href: "#", icon: <Facebook /> },
+	{ name: "Bluesky", href: "#", icon: <Bluesky /> },
+	{ name: "Instagram", href: "#", icon: <Instagram /> },
+];
+
+const today = new Date();
+//should this be declared IN Footer? not sure if/how much overhead it adds or how frequently updated
+
 export const Footer = () => {
-	const socials = [
-		{ name: "LinkedIn", href: "#", icon: <LinkedIn /> },
-		{ name: "Facebook", href: "#", icon: <Facebook /> },
-		{ name: "Bluesky", href: "#", icon: <Bluesky /> },
-		{ name: "Instagram", href: "#", icon: <Instagram /> },
-	];
-
-	const today = new Date();
-
 	return (
 		<footer className="bg-slate-300/40 py-4 text-white rounded-t-lg">
 			<div
