@@ -1,6 +1,6 @@
-import { Hero } from "@/app/ui/sections/home/hero";
-import { Intro } from "@/app/ui/sections/home/intro";
-import { WhyUs } from "@/app/ui/sections/home/why-us";
+import { Hero } from "@/app/ui/sections/hero";
+import { Intro } from "@/app/ui/sections/intro";
+import { WhyUs } from "@/app/ui/sections/why-us";
 
 export default function Home() {
 	return (

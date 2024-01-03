@@ -21,7 +21,6 @@ const tiers = [
 			"Basic analytics",
 			"48-hour support response time",
 		],
-		mostPopular: false,
 	},
 	{
 		name: "Startup",
@@ -36,7 +35,6 @@ const tiers = [
 			"24-hour support response time",
 			"Marketing automations",
 		],
-		mostPopular: false,
 	},
 	{
 		name: "Enterprise",
@@ -52,7 +50,6 @@ const tiers = [
 			"Marketing automations",
 			"Custom reporting tools",
 		],
-		mostPopular: false,
 	},
 ];
 

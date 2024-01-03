@@ -1,5 +1,5 @@
-import { OurServices } from "@/app/ui/sections/services/our-services";
-import { GetStarted } from "@/app/ui/sections/services/get-started";
+import { OurServices } from "@/app/ui/sections/our-services";
+import { GetStarted } from "@/app/ui/sections/get-started";
 
 export default function Services() {
 	return (
