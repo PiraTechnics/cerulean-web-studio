@@ -19,6 +19,7 @@ export const Hero = () => {
 				<Image
 					onLoad={triggerAnimation}
 					src={homeHero}
+					priority
 					fill
 					alt="Lightly rippling ocean waves"
 					className="opacity-80 object-cover"
