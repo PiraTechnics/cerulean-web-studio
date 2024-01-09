@@ -21,7 +21,7 @@ const today = new Date();
 
 export const Footer = () => {
 	return (
-		<footer className="bg-slate-300/40 py-4 text-white rounded-t-lg">
+		<footer className="bg-slate-300/40 py-4 text-white lg:rounded-t-lg mt-10">
 			<div
 				id="footer-content"
 				className="grid lg:grid-cols-4 lg:grid-rows-1 md:grid-cols-2 md:grid-rows-2 grid-rows-4 grid-cols-1 my-2"

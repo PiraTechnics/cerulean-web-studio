@@ -37,14 +37,7 @@ const packageData = {
 				"Includes a lightweight Content Management System (CMS) tailored to your needs, making editing content a breeze!",
 		},
 	],
-	pricing: {
-		header: "Site Design & Hosting",
-		price1: "$1200",
-		label1: "One-Time",
-		price2: "$5",
-		label2: "Per Month",
-	},
-	checklist: [
+	featureChecklist: [
 		"Full Custom Design",
 		"High Performance",
 		"Mobile & Desktop",
@@ -52,6 +45,26 @@ const packageData = {
 		"On-Call Support",
 		"Affordable Add-ons",
 	],
+	pricing: {
+		header: "Site Design & Hosting",
+		options: [
+			{
+				value: "flatrate",
+				label: "Flat Rate",
+				price1: "$1499",
+				subLabel1: "One-Time",
+				price2: "$5",
+				subLabel2: "Per Month",
+			},
+			{
+				value: "subscription",
+				label: "Subscription",
+				price1: "$149",
+				subLabel1: "Per Month",
+			},
+		],
+	},
+
 };
 
 export default function Pricing() {
@@ -74,7 +87,7 @@ export default function Pricing() {
 			<PricePackage
 				header={packageData.header}
 				features={packageData.features}
-				checklist={packageData.checklist}
+				featureChecklist={packageData.featureChecklist}
 				pricing={packageData.pricing}
 			/>
 		</article>
