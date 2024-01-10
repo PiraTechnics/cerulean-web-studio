@@ -3,13 +3,11 @@ import { Mission } from "@/app/ui/sections/mission";
 import { OwnerProfile } from "@/app/ui/sections/owner-profile";
 
 export default function About() {
-	return (
-		<article>
-			<section>
-				<AboutCWS />
-				<Mission />
-				<OwnerProfile />
-			</section>
-		</article>
-	);
+  return (
+    <>
+      <AboutCWS />
+      <Mission />
+      <OwnerProfile />
+    </>
+  );
 }
