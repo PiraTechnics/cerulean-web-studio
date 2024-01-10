@@ -28,7 +28,7 @@ export const PackagePricing = ({ featureChecklist, pricing }: pricingProps) => {
   const [frequency, setFrequency] = useState(pricing.options[0]);
 
   return (
-    <div className="bg-cws-bg-2 px-6 py-16 sm:py-24 lg:flex lg:items-center lg:justify-end lg:bg-none lg:px-0 lg:pl-8">
+    <div className="px-6 py-16 sm:py-24 lg:flex lg:items-center lg:justify-end lg:bg-none lg:px-0 lg:pl-8">
       <div className="mx-auto w-full max-w-lg space-y-8 lg:mx-0">
         <div className="mb-8">
           <h2 className="text-slate-200 text-center text-2xl">

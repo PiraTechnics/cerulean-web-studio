@@ -30,9 +30,18 @@ export const ContactForm = () => {
   };
 
   return (
-    <div className="relative isolate bg-cws-bg-2/30 rounded-lg mt-24 text-slate-100">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-        <div className="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
+    <div
+      id="margin-wrapper"
+      className="relative isolate bg-cws-bg-2/30 rounded-lg mt-24 text-slate-100"
+    >
+      <div
+        id="content-container"
+        className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2"
+      >
+        <div
+          id="content-left"
+          className="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48"
+        >
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
             <div
               id="dark-overlay"
@@ -94,6 +103,7 @@ export const ContactForm = () => {
           </div>
         </div>
         <form
+          id="content-right"
           action="#"
           method="POST"
           onSubmit={handleSubmit}

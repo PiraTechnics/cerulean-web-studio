@@ -32,11 +32,14 @@ export const PricePackage = ({
   pricing,
 }: PackageProps) => {
   return (
-    <div className="relative bg-white rounded-md mb-12">
-      <div className="absolute inset-0" aria-hidden="true">
-        <div className="absolute inset-y-0 right-0 w-1/2 bg-cws-bg-2 rounded-md" />
-      </div>
-      <div className="relative mx-auto max-w-7xl lg:grid lg:grid-cols-2 lg:px-8">
+    <div
+      id="margin-wrapper"
+      className="relative isolate rounded-lg bg-cws-bg-2 text-slate-100 mb-12"
+    >
+      <div
+        id="content-container"
+        className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2"
+      >
         <PackageDetails header={header} features={features} />
         <PackagePricing featureChecklist={featureChecklist} pricing={pricing} />
       </div>
