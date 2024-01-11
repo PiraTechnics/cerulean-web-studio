@@ -31,9 +31,7 @@ export const PackagePricing = ({ featureChecklist, pricing }: pricingProps) => {
     <div className="px-6 py-16 sm:py-24 lg:flex lg:items-center lg:justify-end lg:bg-none lg:px-0 lg:pl-8">
       <div className="mx-auto w-full max-w-lg space-y-8 lg:mx-0">
         <div className="mb-8">
-          <h2 className="text-slate-200 text-center text-2xl">
-            {pricing.header}
-          </h2>
+          <h2 className="text-white text-center text-2xl">{pricing.header}</h2>
           <div className="py-4 flex justify-center">
             <RadioGroup
               value={frequency}
@@ -49,7 +47,7 @@ export const PackagePricing = ({ featureChecklist, pricing }: pricingProps) => {
                   value={option}
                   className={({ checked }) =>
                     clsx(
-                      checked ? "bg-cws-bg-2 text-white" : "text-black",
+                      checked ? "bg-cws-bg-2/90 text-white" : "text-black",
                       "cursor-pointer rounded-full px-2.5 py-1"
                     )
                   }
@@ -71,7 +69,7 @@ export const PackagePricing = ({ featureChecklist, pricing }: pricingProps) => {
               className="flex items-center space-x-3 bg-cws-primary/80 px-8 py-4 text-white"
             >
               <CheckIcon
-                className="h-6 w-6 text-slate-200"
+                className="h-6 w-6 text-slate-100"
                 aria-hidden="true"
               />
               <span>{item}</span>
@@ -80,7 +78,7 @@ export const PackagePricing = ({ featureChecklist, pricing }: pricingProps) => {
         </ul>
         <a
           href="#"
-          className="flex w-fit mx-auto items-center justify-center gap-2 rounded-full border border-transparent bg-gradient-to-r from-cws-primary/90 to-cws-bg-1/90 ring-cws-bg-1 shadow-md py-2 text-xl leading-6 px-4 text-slate-100 hover:from-cws-primary/100 hover:to-cws-bg-1/100"
+          className="flex w-fit mx-auto items-center justify-center gap-2 rounded-full border border-transparent bg-gradient-to-r from-cws-primary/90 to-cws-bg-1/90 ring-cws-bg-1 shadow-md py-2 text-xl leading-6 px-4 text-white hover:from-cws-primary/100 hover:to-cws-bg-1/100"
         >
           <p>Get Started</p>
           <ArrowRightCircleIcon width={30} />
@@ -107,10 +105,10 @@ const PriceOption = ({ option }: priceProps) => {
       <h2 className="sr-only">Price</h2>
       <p className="relative flex flex-col sm:flex-row justify-center gap-4 sm:gap-16">
         <span className="flex flex-col text-center">
-          <span className="text-4xl sm:text-5xl font-bold tracking-tight text-slate-200">
+          <span className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
             {option.price1}
           </span>
-          <span className="mt-2 text-lg font-medium text-slate-300">
+          <span className="mt-2 text-lg font-medium text-slate-100">
             {option.subLabel1}
           </span>
           <span className="sr-only">plus</span>
@@ -122,16 +120,16 @@ const PriceOption = ({ option }: priceProps) => {
               aria-hidden="true"
             >
               <PlusIcon
-                className="h-6 w-6 sm:h-8 sm:w-8 text-slate-200"
+                className="h-6 w-6 sm:h-8 sm:w-8 text-white"
                 aria-hidden="true"
               />
             </span>
             <span>
               <span className="flex flex-col text-center">
-                <span className="text-4xl sm:text-5xl font-bold tracking-tight text-slate-200">
+                <span className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
                   {option.price2}
                 </span>
-                <span className="mt-2 font-medium text-lg text-slate-300">
+                <span className="mt-2 font-medium text-lg text-slate-100">
                   {option.subLabel2}
                 </span>
               </span>

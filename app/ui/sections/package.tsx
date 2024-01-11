@@ -32,17 +32,22 @@ export const PricePackage = ({
   pricing,
 }: PackageProps) => {
   return (
-    <div
-      id="margin-wrapper"
-      className="relative isolate rounded-lg bg-cws-bg-2 text-slate-100 mb-12"
-    >
+    <section className="mt-2 mb-8">
       <div
-        id="content-container"
-        className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2"
+        id="margin-wrapper"
+        className="relative isolate rounded-lg bg-cws-bg-2/50 text-slate-100"
       >
-        <PackageDetails header={header} features={features} />
-        <PackagePricing featureChecklist={featureChecklist} pricing={pricing} />
+        <div
+          id="content-container"
+          className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2"
+        >
+          <PackageDetails header={header} features={features} />
+          <PackagePricing
+            featureChecklist={featureChecklist}
+            pricing={pricing}
+          />
+        </div>
       </div>
-    </div>
+    </section>
   );
 };

@@ -1,4 +1,5 @@
 import { PricePackage } from "@/app/ui/sections/package";
+import { AddOns } from "../ui/sections/package-addons";
 import {
   ViewColumnsIcon,
   RocketLaunchIcon,
@@ -6,7 +7,7 @@ import {
   PencilSquareIcon,
 } from "@heroicons/react/24/outline";
 
-const packageData = {
+const staticSitePackage = {
   header: {
     superscript: "Full-featured",
     title: "Business & Portfolio Websites",
@@ -73,7 +74,7 @@ export default function Pricing() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <p className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
-              Pricing plans for teams of&nbsp;all&nbsp;sizes
+              Pricing for teams of&nbsp;all&nbsp;sizes
             </p>
           </div>
           <p className="mx-auto mt-6 max-w-2xl text-center text-xl leading-8">
@@ -84,11 +85,12 @@ export default function Pricing() {
         </div>
       </div>
       <PricePackage
-        header={packageData.header}
-        features={packageData.features}
-        featureChecklist={packageData.featureChecklist}
-        pricing={packageData.pricing}
+        header={staticSitePackage.header}
+        features={staticSitePackage.features}
+        featureChecklist={staticSitePackage.featureChecklist}
+        pricing={staticSitePackage.pricing}
       />
+      <AddOns />
     </section>
   );
 }
