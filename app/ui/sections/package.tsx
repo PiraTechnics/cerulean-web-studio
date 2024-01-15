@@ -17,9 +17,9 @@ type PackageProps = {
     options: Array<{
       value: string;
       label: string;
-      price1: string;
+      price1: number;
       subLabel1: string;
-      price2?: string;
+      price2?: number;
       subLabel2?: string;
     }>;
   };

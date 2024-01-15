@@ -28,7 +28,7 @@ export const contactInformation = {
   phone: "(555) 555-5555",
 };
 
-export const pricingInformation = {
+export const packageDetails = {
   header: {
     superscript: "Full-featured",
     title: "Business & Portfolio Websites",
@@ -67,30 +67,31 @@ export const pricingInformation = {
     "On-Call Support",
     "Affordable Add-ons",
   ],
-  pricing: {
-    header: "Site Design & Hosting",
-    options: [
-      {
-        value: "flatrate",
-        label: "Flat Rate",
-        price1: "$1499",
-        subLabel1: "One-Time",
-        price2: "$5",
-        subLabel2: "Per Month",
-      },
-      {
-        value: "subscription",
-        label: "Subscription",
-        price1: "$149",
-        subLabel1: "Per Month",
-      },
-    ],
-  },
+};
+
+export const packagePricing = {
+  header: "Site Design & Hosting",
+  options: [
+    {
+      value: "flatrate",
+      label: "Flat Rate",
+      price1: 1499,
+      subLabel1: "One-Time",
+      price2: 5,
+      subLabel2: "Per Month",
+    },
+    {
+      value: "subscription",
+      label: "Subscription",
+      price1: 149,
+      subLabel1: "Per Month",
+    },
+  ],
   addOns: [
     {
       name: "E-Commerce",
       value: "ecommerce",
-      price1: "$1000",
+      price1: 1000,
       icon: ShoppingBagIcon as HeroIcon,
       description:
         "Turn your site into a digital storefront with the power of digital commerce integration! Use with your own Shopify account.",
@@ -98,8 +99,8 @@ export const pricingInformation = {
     {
       name: "Blog",
       value: "blog",
-      price1: "$200",
-      price2: "$40",
+      price1: 200,
+      price2: 40,
       label2: "Per Month",
       icon: DocumentTextIcon as HeroIcon,
       description:
@@ -108,7 +109,7 @@ export const pricingInformation = {
     {
       name: "Extra Page",
       value: "extrapage",
-      price1: "$100",
+      price1: 100,
       icon: DocumentDuplicateIcon as HeroIcon,
       description:
         "Add more content to your site! Additional design consultation provided at no charge.",
@@ -116,8 +117,8 @@ export const pricingInformation = {
     {
       name: "Managed Domain Name",
       value: "manageddomain",
-      price1: "$5",
-      price2: "$5",
+      price1: 5,
+      price2: 5,
       label1: "Per Month",
       label2: "Per Month",
       icon: GlobeAltIcon as HeroIcon,

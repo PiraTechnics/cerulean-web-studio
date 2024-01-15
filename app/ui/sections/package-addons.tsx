@@ -2,9 +2,9 @@ type addOnsProps = {
   addOns: Array<{
     name: string;
     value: string;
-    price1: string;
+    price1: number;
     label1?: string;
-    price2?: string;
+    price2?: number;
     label2?: string;
     icon: HeroIcon;
     description: string;
@@ -59,7 +59,7 @@ export const AddOns = ({ addOns }: addOnsProps) => {
                     )}
                   </td>
                   <td className="py-6 text-center text-xl md:text-2xl sm:pr-0 align-top">
-                    <div>{entry.price1}</div>
+                    <div>${entry.price1}</div>
                     {entry.label1 && (
                       <div className="text-xs sm:text-sm text-slate-200">
                         {entry.label1}

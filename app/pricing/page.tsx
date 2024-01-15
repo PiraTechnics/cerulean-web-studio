@@ -2,8 +2,7 @@
 
 import { PricePackage } from "@/app/ui/sections/package";
 import { AddOns } from "@/app/ui/sections/package-addons";
-import { EstimateCalculator } from "@/app/ui/sections/package-calculator";
-import { pricingInformation } from "@/app/data";
+import { packageDetails, packagePricing } from "@/app/data";
 
 export default function Pricing() {
   return (
@@ -23,13 +22,12 @@ export default function Pricing() {
         </div>
       </div>
       <PricePackage
-        header={pricingInformation.header}
-        features={pricingInformation.features}
-        featureChecklist={pricingInformation.featureChecklist}
-        pricing={pricingInformation.pricing}
+        header={packageDetails.header}
+        features={packageDetails.features}
+        featureChecklist={packageDetails.featureChecklist}
+        pricing={packagePricing}
       />
-      <AddOns addOns={pricingInformation.addOns} />
-      {/* <EstimateCalculator /> */}
+      <AddOns addOns={packagePricing.addOns} />
     </section>
   );
 }

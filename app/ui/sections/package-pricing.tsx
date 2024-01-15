@@ -1,5 +1,3 @@
-"use client";
-
 import {
   CheckIcon,
   PlusIcon,
@@ -16,9 +14,9 @@ type pricingProps = {
     options: Array<{
       value: string;
       label: string;
-      price1: string;
+      price1: number;
       subLabel1: string;
-      price2?: string;
+      price2?: number;
       subLabel2?: string;
     }>;
   };
@@ -48,7 +46,7 @@ export const PackagePricing = ({ featureChecklist, pricing }: pricingProps) => {
                   className={({ checked }) =>
                     clsx(
                       checked ? "bg-cws-bg-2/90 text-white" : "text-black",
-                      "cursor-pointer rounded-full px-2.5 py-1"
+                      "cursor-pointer rounded-full px-2.5 py-1",
                     )
                   }
                 >
@@ -92,9 +90,9 @@ type priceProps = {
   option: {
     value: string;
     label: string;
-    price1: string;
+    price1: number;
     subLabel1: string;
-    price2?: string;
+    price2?: number;
     subLabel2?: string;
   };
 };
@@ -106,7 +104,7 @@ const PriceOption = ({ option }: priceProps) => {
       <p className="relative flex flex-col sm:flex-row justify-center gap-4 sm:gap-16">
         <span className="flex flex-col text-center">
           <span className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
-            {option.price1}
+            ${option.price1}
           </span>
           <span className="mt-2 text-lg font-medium text-slate-100">
             {option.subLabel1}
@@ -127,7 +125,7 @@ const PriceOption = ({ option }: priceProps) => {
             <span>
               <span className="flex flex-col text-center">
                 <span className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
-                  {option.price2}
+                  ${option.price2}
                 </span>
                 <span className="mt-2 font-medium text-lg text-slate-100">
                   {option.subLabel2}
