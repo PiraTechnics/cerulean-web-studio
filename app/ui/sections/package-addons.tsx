@@ -1,53 +1,18 @@
-import {
-  ShoppingBagIcon,
-  DocumentTextIcon,
-  GlobeAltIcon,
-  DocumentDuplicateIcon,
-} from "@heroicons/react/24/outline";
+type addOnsProps = {
+  addOns: Array<{
+    name: string;
+    value: string;
+    price1: string;
+    label1?: string;
+    price2?: string;
+    label2?: string;
+    icon: HeroIcon;
+    description: string;
+    subDescription?: string;
+  }>;
+};
 
-const addOnChoices = [
-  {
-    name: "E-Commerce",
-    value: "ecommerce",
-    price1: "$1000",
-    icon: <ShoppingBagIcon />,
-    description:
-      "Turn your site into a digital storefront with the power of digital commerce integration! Use with your own Shopify account.",
-  },
-  {
-    name: "Blog",
-    value: "blog",
-    price1: "$200",
-    price2: "$40",
-    label2: "Per Month",
-    icon: <DocumentTextIcon />,
-    description:
-      "Create and edit your own articles easily with a stylish minimalist blogging interface.",
-  },
-  {
-    name: "Extra Page",
-    value: "extrapage",
-    price1: "$100",
-    icon: <DocumentDuplicateIcon />,
-    description:
-      "Add more content to your site! Additional design consultation provided at no charge.",
-  },
-  {
-    name: "Managed Domain Name",
-    value: "manageddomain",
-    price1: "$25",
-    price2: "$5",
-    label1: "Per Month",
-    label2: "Per Month",
-    icon: <GlobeAltIcon />,
-    description:
-      "No domain name? No Problem! We'll handle the work of purchasing and configuring everything to work with your site.",
-    subDescription:
-      "*Price estimated from registrar rates. Includes cost of 1-year purchase of available domain of choice. Domain transfers to customer upon cancellation.",
-  },
-];
-
-export const AddOns = () => {
+export const AddOns = ({ addOns }: addOnsProps) => {
   return (
     <section className="my-4">
       <div className="bg-cws-bg-2/60 w-full rounded-lg text-white px-1 sm:px-6 lg:static lg:px-8 py-12">
@@ -76,11 +41,12 @@ export const AddOns = () => {
             </tr>
           </thead>
           <tbody>
-            {addOnChoices.map((entry) => {
+            {addOns.map((entry) => {
               return (
                 <tr key={entry.value}>
                   <td className="max-w-0 py-5 pl-4 pr-3 text-sm sm:pl-0">
-                    <div className="font-semibold text-xl md:text-2xl">
+                    <div className="font-semibold text-xl md:text-2xl flex gap-2">
+                      <entry.icon className="h-7 w-7 text-white" />
                       {entry.name}
                     </div>
                     <div className="mt-1 text-slate-300 text-sm md:text-base">

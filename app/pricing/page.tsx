@@ -1,71 +1,9 @@
-import { PricePackage } from "@/app/ui/sections/package";
-import { AddOns } from "../ui/sections/package-addons";
-import {
-  ViewColumnsIcon,
-  RocketLaunchIcon,
-  CircleStackIcon,
-  PencilSquareIcon,
-} from "@heroicons/react/24/outline";
+"use client";
 
-const staticSitePackage = {
-  header: {
-    superscript: "Full-featured",
-    title: "Business & Portfolio Websites",
-  },
-  features: [
-    {
-      name: "Fast & Responsive",
-      icon: RocketLaunchIcon as HeroIcon,
-      description:
-        "Developed on modern web frameworks, our sites are speedy and beautiful on any screen, no matter the size.",
-    },
-    {
-      name: "5 Pages Included",
-      icon: ViewColumnsIcon as HeroIcon,
-      description:
-        "Choose from a variety of templates, or build from scratch! Additional pages can be added anytime, starting at $100/page.",
-    },
-    {
-      name: "Managed Hosting",
-      icon: CircleStackIcon as HeroIcon,
-      description:
-        "Reliable and secure web hosting provided on a monthly basis; uptime monitoring and technical support included.",
-    },
-    {
-      name: "Easy to Edit",
-      icon: PencilSquareIcon as HeroIcon,
-      description:
-        "Includes a lightweight Content Management System (CMS) tailored to your needs, making editing content a breeze!",
-    },
-  ],
-  featureChecklist: [
-    "Full Custom Design",
-    "High Performance",
-    "Mobile & Desktop",
-    "SEO Friendly",
-    "On-Call Support",
-    "Affordable Add-ons",
-  ],
-  pricing: {
-    header: "Site Design & Hosting",
-    options: [
-      {
-        value: "flatrate",
-        label: "Flat Rate",
-        price1: "$1499",
-        subLabel1: "One-Time",
-        price2: "$5",
-        subLabel2: "Per Month",
-      },
-      {
-        value: "subscription",
-        label: "Subscription",
-        price1: "$149",
-        subLabel1: "Per Month",
-      },
-    ],
-  },
-};
+import { PricePackage } from "@/app/ui/sections/package";
+import { AddOns } from "@/app/ui/sections/package-addons";
+import { EstimateCalculator } from "@/app/ui/sections/package-calculator";
+import { pricingInformation } from "@/app/data";
 
 export default function Pricing() {
   return (
@@ -74,7 +12,7 @@ export default function Pricing() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <p className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
-              Pricing for teams of&nbsp;all&nbsp;sizes
+              Pricing for teams of all sizes
             </p>
           </div>
           <p className="mx-auto mt-6 max-w-2xl text-center text-xl leading-8">
@@ -85,12 +23,13 @@ export default function Pricing() {
         </div>
       </div>
       <PricePackage
-        header={staticSitePackage.header}
-        features={staticSitePackage.features}
-        featureChecklist={staticSitePackage.featureChecklist}
-        pricing={staticSitePackage.pricing}
+        header={pricingInformation.header}
+        features={pricingInformation.features}
+        featureChecklist={pricingInformation.featureChecklist}
+        pricing={pricingInformation.pricing}
       />
-      <AddOns />
+      <AddOns addOns={pricingInformation.addOns} />
+      {/* <EstimateCalculator /> */}
     </section>
   );
 }

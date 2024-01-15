@@ -20,7 +20,7 @@ import {
   EnvelopeIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
-import { contactInformation } from "@/app/constants";
+import { contactInformation } from "@/app/data";
 import { FormEvent } from "react";
 
 export const ContactForm = () => {

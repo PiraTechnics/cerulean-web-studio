@@ -7,7 +7,7 @@ import FullLogo from "@/public/cerulean.svg";
 
 import Link from "next/link";
 import Image from "next/image";
-import { contactInformation, pageLinks } from "@/app/constants";
+import { contactInformation, pageLinks } from "@/app/data";
 
 const socials = [
   { name: "LinkedIn", href: "#", icon: <LinkedIn /> },
