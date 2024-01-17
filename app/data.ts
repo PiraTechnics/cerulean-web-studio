@@ -88,6 +88,7 @@ export const packagePricing = {
     },
   ],
   addOns: [
+    /* Remove E-Commerce until ready to offer service
     {
       name: "E-Commerce",
       value: "ecommerce",
@@ -95,9 +96,9 @@ export const packagePricing = {
       icon: ShoppingBagIcon as HeroIcon,
       description:
         "Turn your site into a digital storefront with the power of digital commerce integration! Use with your own Shopify account.",
-    },
+    }, */
     {
-      name: "Blog",
+      name: "Blog Section",
       value: "blog",
       price1: 200,
       price2: 40,
@@ -115,11 +116,11 @@ export const packagePricing = {
         "Add more content to your site! Additional design consultation provided at no charge.",
     },
     {
-      name: "Managed Domain Name",
+      name: "Domain Name",
       value: "manageddomain",
-      price1: 5,
-      price2: 5,
-      label1: "Per Month",
+      price1: 30,
+      price2: 4,
+      label1: "Annually",
       label2: "Per Month",
       icon: GlobeAltIcon as HeroIcon,
       description:

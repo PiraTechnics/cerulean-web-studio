@@ -23,6 +23,9 @@ export const AddOns = ({ addOns }: addOnsProps) => {
           <p className="mt-2 sm:text-lg text-slate-100">
             With optional add-ons for Flat-Rate & Subscription plans
           </p>
+          <p className="text-sm text-slate-200">
+            *Listed prices are estimates only
+          </p>
         </div>
         <table className="min-w-full mt-12">
           <colgroup>
@@ -30,13 +33,16 @@ export const AddOns = ({ addOns }: addOnsProps) => {
             <col className="min-w-1/6" />
             <col className="min-w-1/6" />
           </colgroup>
-          <thead className="border-b border-slate-100 text-xl font-semibold">
+          <thead className="border-b border-slate-100 sm:text-xl font-semibold">
             <tr>
               <th scope="col" className="py-3.5 pl-4 pr-3 text-left sm:pl-0">
                 Name
               </th>
               <th scope="col" className="py-3.5 pl-3 pr-4 text-center sm:pr-0">
-                Price
+                Flat Cost
+              </th>
+              <th scope="col" className="py-3.5 pl-3 pr-4 text-center sm:pr-0">
+                Subscription Cost
               </th>
             </tr>
           </thead>
@@ -45,40 +51,43 @@ export const AddOns = ({ addOns }: addOnsProps) => {
               return (
                 <tr key={entry.value}>
                   <td className="max-w-0 py-5 pl-4 pr-3 text-sm sm:pl-0">
-                    <div className="font-semibold text-xl md:text-2xl flex gap-2">
-                      <entry.icon className="h-7 w-7 text-white" />
+                    <div className="text-lg sm:font-semibold sm:text-xl md:text-2xl flex gap-2">
+                      <entry.icon className="w-8" />
                       {entry.name}
                     </div>
-                    <div className="mt-1 text-slate-300 text-sm md:text-base">
+                    <div className="mt-1 text-slate-300 text-sm md:text-base max-sm:hidden">
                       {entry.description}
                     </div>
                     {entry.subDescription && (
-                      <div className="mt-2 text-xs text-slate-400">
+                      <div className="mt-2 text-xs text-slate-400 max-sm:hidden">
                         {entry.subDescription}
                       </div>
                     )}
                   </td>
-                  <td className="py-6 text-center text-xl md:text-2xl sm:pr-0 align-top">
-                    <div>${entry.price1}</div>
-                    {entry.label1 && (
-                      <div className="text-xs sm:text-sm text-slate-200">
-                        {entry.label1}
-                      </div>
-                    )}
+                  <td className="py-6 text-center text-lg sm:text-xl md:text-2xl sm:pr-0 align-top">
+                    <div>{entry.price1 ? "$" + entry.price1 : "N/A"}</div>
+                    <div className="text-xs sm:text-sm text-slate-200">
+                      {entry.label1}
+                    </div>
                   </td>
-                  <td className="py-6 text-xl px-4 md:px-8 align-top">
-                    <button
-                      type="button"
-                      className="rounded-lg bg-cws-primary px-2.5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-cws-bg-2 ring-1 min-w-max"
-                    >
-                      Add to quote
-                    </button>
+                  <td className="py-6 text-center text-lg sm:text-xl md:text-2xl sm:pr-0 align-top">
+                    <div>{entry.price2 ? "$" + entry.price2 : "N/A"}</div>
+                    <div className="text-xs sm:text-sm text-slate-200">
+                      {entry.label2}
+                    </div>
                   </td>
                 </tr>
               );
             })}
           </tbody>
         </table>
+        <div className="mt-6 px-2 text-sm text-slate-200 text-center">
+          Questions? Need something not listed? Ask us -- see contact
+          information below.
+        </div>
+        <div className="text-sm text-slate-400 text-center mt-2">
+          *Prices are estimates only
+        </div>
       </div>
     </section>
   );

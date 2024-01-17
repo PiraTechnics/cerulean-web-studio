@@ -1,12 +1,13 @@
 "use client";
 
+import { packageDetails, packagePricing } from "@/app/data";
 import { PricePackage } from "@/app/ui/sections/package";
 import { AddOns } from "@/app/ui/sections/package-addons";
-import { packageDetails, packagePricing } from "@/app/data";
+import { GetStarted } from "@/app/ui/sections/get-started";
 
 export default function Pricing() {
   return (
-    <section>
+    <section className="mb-4 lg:mb-8">
       <div className="mt-16 py-12 sm:py-24 text-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
@@ -15,9 +16,9 @@ export default function Pricing() {
             </p>
           </div>
           <p className="mx-auto mt-6 max-w-2xl text-center text-xl leading-8">
-            Choose an affordable plan that’s packed with the best features for
-            engaging your audience, creating customer loyalty, and driving
-            sales.
+            We offer affordable plans for all budgets, with features and add-ons
+            for engaging your audience, creating customer loyalty, driving
+            sales, and more.
           </p>
         </div>
       </div>
@@ -28,6 +29,7 @@ export default function Pricing() {
         pricing={packagePricing}
       />
       <AddOns addOns={packagePricing.addOns} />
+      <GetStarted />
     </section>
   );
 }

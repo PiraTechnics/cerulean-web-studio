@@ -46,7 +46,7 @@ export const PackagePricing = ({ featureChecklist, pricing }: pricingProps) => {
                   className={({ checked }) =>
                     clsx(
                       checked ? "bg-cws-bg-2/90 text-white" : "text-black",
-                      "cursor-pointer rounded-full px-2.5 py-1",
+                      "cursor-pointer rounded-full px-2.5 py-1"
                     )
                   }
                 >
@@ -74,13 +74,6 @@ export const PackagePricing = ({ featureChecklist, pricing }: pricingProps) => {
             </li>
           ))}
         </ul>
-        <a
-          href="#"
-          className="flex w-fit mx-auto items-center justify-center gap-2 rounded-full border border-transparent bg-gradient-to-r from-cws-primary/90 to-cws-bg-1/90 ring-cws-bg-1 shadow-md py-2 text-xl leading-6 px-4 text-white hover:from-cws-primary/100 hover:to-cws-bg-1/100"
-        >
-          <p>Get Started</p>
-          <ArrowRightCircleIcon width={30} />
-        </a>
       </div>
     </div>
   );
