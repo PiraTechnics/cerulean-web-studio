@@ -9,7 +9,7 @@ import {
   PencilSquareIcon,
   PresentationChartLineIcon,
   RocketLaunchIcon,
-  ShoppingBagIcon,
+  //ShoppingBagIcon,
   ViewColumnsIcon,
   WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline";
@@ -25,12 +25,12 @@ export const pageLinks = [
 
 export const contactInformation = {
   location: "Los Angeles",
-  address: "420 Nowhere Street, Suite 690",
+  address: "5632 Van Nuys Blvd #4047",
   city: "Sherman Oaks",
   state: "CA",
-  zip: "91411",
-  email: "fakename@testmail.net",
-  phone: "(555) 555-5555",
+  zip: "91401",
+  email: "devin@ceruleanwebstudio.com",
+  phone: "(760) 576-7555",
 };
 
 export const services = [
@@ -46,7 +46,7 @@ export const services = [
     link: "mobile",
     icon: DevicePhoneMobileIcon as HeroIcon,
     description:
-      "Have you ever tried to access a website on your phone, only to see a microscopic version of what it looks like on a computer screen? Yikes -- That's what a website without Mobile Optimization looks like. Over half of all internet traffic today is driven by smartphones. At Cerulean Web Studio we build for the mobile experience AND conventional computer screens, so your site will look beautiful, no matter what device its accessed from.",
+      "Have you ever tried to access a website on your phone, only to see a microscopic version of what it looks like on a computer screen? Yikes -- That's what a website without Mobile Optimization looks like. Over half of all internet traffic today is driven by smartphones. At Cerulean Web Studio we build for the mobile experience & conventional computer screens, so your site will look beautiful on any device.",
   },
   /* Removing e-commerce until it is offered
   {
@@ -59,14 +59,14 @@ export const services = [
     link: "seo",
     icon: PresentationChartLineIcon as HeroIcon,
     description:
-      "We use the latest development tools and best practices to ensure optimal settings for search engines and maximum reach for your site. We offer a free consultation for SEO with pur standard Website & Hosting package.",
+      "We use the latest development tools and best practices to ensure optimal settings for search engines and maximum reach for your site. We offer a free consultation for SEO with our standard Website & Hosting package.",
   },
   {
     name: "Application Development",
     link: "development",
     icon: CodeBracketIcon as HeroIcon,
     description:
-      "Need something a little more complex than our standard offerings? We can build it for you! Whether you are searching for a perfect Invoicing System, a Customer Relationship Management dashboard, E-Commerce for your business or more, Cerulean Web Studio is here to help. Call or Email us for a free consultation and we'll take it from there.",
+      "Need something a little more complex than our standard offerings? We can build it for you! Whether you need a perfect invoicing dystem, a customer relationship management dashboard, E-Commerce for your business or more, Cerulean Web Studio is here to help. Call or Email us for a free consultation and we'll take it from there.",
   },
   {
     name: "Managed Hosting",
@@ -80,7 +80,7 @@ export const services = [
     link: "maintainence",
     icon: WrenchScrewdriverIcon as HeroIcon,
     description:
-      "What if you already have a website, and just need something changed or added? Give us a call and we'll see what Cerulean Web Studio can do for you! Additionally, as a part of our subscription package we provide updates and content management on a monthly basis.",
+      "What if you already have a website, and just need something changed or added? Contact us and we'll see what Cerulean Web Studio can do for you! Additionally, as a part of our Subscription package we provide updates and content management on a monthly basis.",
   },
 ];
 

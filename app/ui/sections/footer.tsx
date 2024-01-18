@@ -10,7 +10,11 @@ import Image from "next/image";
 import { contactInformation, pageLinks } from "@/app/data";
 
 const socials = [
-  { name: "LinkedIn", href: "#", icon: <LinkedIn /> },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/devinyounge/",
+    icon: <LinkedIn />,
+  },
   { name: "Facebook", href: "#", icon: <Facebook /> },
   { name: "Bluesky", href: "#", icon: <Bluesky /> },
   { name: "Instagram", href: "#", icon: <Instagram /> },
@@ -67,14 +71,16 @@ export const Footer = () => {
           <div className="flex gap-2 my-4 justify-center">
             {socials.map((link) => {
               return (
-                <Link
+                <a
                   key={link.name}
                   href={link.href}
                   aria-label={link.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-1.5 rounded-full bg-slate-700 hover:bg-[#00c4cc]"
                 >
                   {link.icon}
-                </Link>
+                </a>
               );
             })}
           </div>

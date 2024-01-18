@@ -11,10 +11,11 @@ export const OurServices = () => {
         >
           <div className="text-4xl text-center ">What We Do</div>
           <div className="mt-4 px-8 text-lg">
-            Whether you are an established business looking to update your web
-            presence, a brand new enterprise looking for a digital foothold, or
-            a creative in need of a stylish custom portfolio, Cerulean Web
-            Studio has you covered.
+            Whether you&apos;re an established business looking to update your
+            web presence, a brand new enterprise in need of a digital foothold,
+            or a creative searching for a stylish custom portfolio,{" "}
+            <strong className="italic">Cerulean Web Studio</strong> has you
+            covered. For a breakdown of our standard services, see below.
           </div>
         </div>
         <div
