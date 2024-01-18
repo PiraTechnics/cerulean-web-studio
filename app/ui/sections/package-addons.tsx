@@ -85,9 +85,6 @@ export const AddOns = ({ addOns }: addOnsProps) => {
           Questions? Need something not listed? Ask us -- see contact
           information below.
         </div>
-        <div className="text-sm text-slate-400 text-center mt-2">
-          *Prices are estimates only
-        </div>
       </div>
     </section>
   );

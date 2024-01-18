@@ -11,7 +11,7 @@ export const GetStarted = () => {
         </h2>
         <div className="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
           <a
-            href="#"
+            href="/contact"
             className="flex mx-auto items-center rounded-full bg-gradient-to-r from-cws-primary to-cws-bg-1 px-3.5 py-2.5 font-semibold shadow-sm ring-1 ring-cws-bg-1 hover:ring-cws-bg-1/50 focus:outline-none text-white"
           >
             <span className="px-1">Get Started</span>

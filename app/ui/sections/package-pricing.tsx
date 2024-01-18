@@ -74,6 +74,10 @@ export const PackagePricing = ({ featureChecklist, pricing }: pricingProps) => {
             </li>
           ))}
         </ul>
+        <div className="text-sm text-slate-300 text-center mt-2">
+          *Prices are estimates only. Subscription plan minimum 6 month
+          contract.
+        </div>
       </div>
     </div>
   );
