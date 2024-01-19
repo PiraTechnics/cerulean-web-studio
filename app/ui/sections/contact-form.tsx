@@ -21,9 +21,25 @@ import {
   PhoneIcon,
 } from "@heroicons/react/24/outline";
 import { contactInformation } from "@/app/data";
-import { FormEvent } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 export const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    message: "",
+  });
+
+  const handleChange = (
+    event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>,
+  ) => {
+    const { id, value } = event.target;
+    setFormData({ ...formData, [id]: value });
+    console.log(id + ": " + value);
+  };
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     alert("Still need to implement this!");
@@ -113,7 +129,7 @@ export const ContactForm = () => {
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
                 <label
-                  htmlFor="first-name"
+                  htmlFor="firstName"
                   className="block text-sm font-semibold leading-6"
                 >
                   First name
@@ -121,8 +137,10 @@ export const ContactForm = () => {
                 <div className="mt-2.5">
                   <input
                     type="text"
-                    name="first-name"
-                    id="first-name"
+                    id="firstName"
+                    required
+                    value={formData.firstName}
+                    onChange={handleChange}
                     autoComplete="given-name"
                     className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cws-bg-2 sm:text-sm sm:leading-6 text-black dark:text-slate-100 dark:bg-transparent"
                   />
@@ -130,7 +148,7 @@ export const ContactForm = () => {
               </div>
               <div>
                 <label
-                  htmlFor="last-name"
+                  htmlFor="lastName"
                   className="block text-sm font-semibold leading-6"
                 >
                   Last name
@@ -138,8 +156,10 @@ export const ContactForm = () => {
                 <div className="mt-2.5">
                   <input
                     type="text"
-                    name="last-name"
-                    id="last-name"
+                    id="lastName"
+                    required
+                    value={formData.lastName}
+                    onChange={handleChange}
                     autoComplete="family-name"
                     className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cws-bg-2 sm:text-sm sm:leading-6 text-black dark:text-slate-100 dark:bg-transparent"
                   />
@@ -155,8 +175,10 @@ export const ContactForm = () => {
                 <div className="mt-2.5">
                   <input
                     type="email"
-                    name="email"
                     id="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
                     autoComplete="email"
                     className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cws-bg-2 sm:text-sm sm:leading-6 text-black dark:text-slate-100 dark:bg-transparent"
                   />
@@ -164,7 +186,7 @@ export const ContactForm = () => {
               </div>
               <div className="sm:col-span-2">
                 <label
-                  htmlFor="phone-number"
+                  htmlFor="phoneNumber"
                   className="block text-sm font-semibold leading-6"
                 >
                   Phone number
@@ -172,8 +194,9 @@ export const ContactForm = () => {
                 <div className="mt-2.5">
                   <input
                     type="tel"
-                    name="phone-number"
-                    id="phone-number"
+                    id="phoneNumber"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
                     autoComplete="tel"
                     className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cws-bg-2 sm:text-sm sm:leading-6 text-black dark:text-slate-100 dark:bg-transparent"
                   />
@@ -190,9 +213,11 @@ export const ContactForm = () => {
                   <textarea
                     name="message"
                     id="message"
+                    required
+                    value={formData.message}
+                    onChange={handleChange}
                     rows={4}
                     className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cws-bg-2 sm:text-sm sm:leading-6 text-black dark:text-slate-100 dark:bg-transparent"
-                    defaultValue={""}
                   />
                 </div>
               </div>
