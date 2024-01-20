@@ -19,9 +19,11 @@ import {
   BuildingOffice2Icon,
   EnvelopeIcon,
   PhoneIcon,
+  CheckIcon,
 } from "@heroicons/react/24/outline";
 import { contactInformation } from "@/app/data";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { Fragment, ChangeEvent, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -31,18 +33,112 @@ export const ContactForm = () => {
     phoneNumber: "",
     message: "",
   });
+  const [ready, setReady] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>,
   ) => {
     const { id, value } = event.target;
     setFormData({ ...formData, [id]: value });
-    console.log(id + ": " + value);
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
+  async function handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
-    alert("Still need to implement this!");
+    setReady(false); //loading state, disable submit button
+
+    console.log(formData);
+
+    await fetch("/api/email", {
+      method: "POST",
+      body: JSON.stringify({
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phoneNumber: formData.phoneNumber,
+        message: formData.message,
+      }),
+    });
+
+    //clear form and show message to indicate it was submitted successfully
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phoneNumber: "",
+      message: "",
+    });
+
+    setModalOpen(true); //open confirmation dialog
+    setReady(true); //re-enable submit button when done
+  }
+
+  const ContactConfirmation = () => {
+    return (
+      <Transition.Root show={modalOpen} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={setModalOpen}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                enterTo="opacity-100 translate-y-0 sm:scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              >
+                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
+                  <div>
+                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
+                      <CheckIcon
+                        className="h-6 w-6 text-green-600"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <div className="mt-3 text-center sm:mt-5">
+                      <Dialog.Title
+                        as="h3"
+                        className="text-lg font-semibold leading-6 text-slate-900"
+                      >
+                        Message Sent
+                      </Dialog.Title>
+                      <div className="mt-2">
+                        <p className="text-sm text-slate-600">
+                          Your request has been succuessfully emailed to us.
+                          Keep an eye out for a reply in the next 48 hours!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-5 sm:mt-6 flex justify-center">
+                    <button
+                      type="button"
+                      className="justify-center rounded-md bg-cws-bg-2 px-4 py-2 font-semibold text-white shadow-sm hover:bg-cws-bg-1 focus-visible:outline focus-visible:outline-cws-bg-2"
+                      onClick={() => setModalOpen(false)}
+                    >
+                      Close
+                    </button>
+                  </div>
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition.Root>
+    );
   };
 
   return (
@@ -118,120 +214,123 @@ export const ContactForm = () => {
             </dl>
           </div>
         </div>
-        <form
-          id="content-right"
-          action="#"
-          method="POST"
-          onSubmit={handleSubmit}
-          className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48 font-sans"
-        >
-          <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
-            <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-              <div>
-                <label
-                  htmlFor="firstName"
-                  className="block text-sm font-semibold leading-6"
-                >
-                  First name
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    type="text"
-                    id="firstName"
-                    required
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    autoComplete="given-name"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cws-bg-2 sm:text-sm sm:leading-6 text-black dark:text-slate-100 dark:bg-transparent"
-                  />
+        <div id="content-right">
+          <form
+            action="#"
+            method="POST"
+            onSubmit={handleSubmit}
+            className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48 font-sans"
+          >
+            <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+              <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                <div>
+                  <label
+                    htmlFor="firstName"
+                    className="block text-sm font-semibold leading-6"
+                  >
+                    First name
+                  </label>
+                  <div className="mt-2.5">
+                    <input
+                      type="text"
+                      id="firstName"
+                      required
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      autoComplete="given-name"
+                      className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cws-bg-2 sm:text-sm sm:leading-6 text-black dark:text-slate-100 dark:bg-transparent"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label
+                    htmlFor="lastName"
+                    className="block text-sm font-semibold leading-6"
+                  >
+                    Last name
+                  </label>
+                  <div className="mt-2.5">
+                    <input
+                      type="text"
+                      id="lastName"
+                      required
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      autoComplete="family-name"
+                      className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cws-bg-2 sm:text-sm sm:leading-6 text-black dark:text-slate-100 dark:bg-transparent"
+                    />
+                  </div>
+                </div>
+                <div className="sm:col-span-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-semibold leading-6"
+                  >
+                    Email
+                  </label>
+                  <div className="mt-2.5">
+                    <input
+                      type="email"
+                      id="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      autoComplete="email"
+                      className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cws-bg-2 sm:text-sm sm:leading-6 text-black dark:text-slate-100 dark:bg-transparent"
+                    />
+                  </div>
+                </div>
+                <div className="sm:col-span-2">
+                  <label
+                    htmlFor="phoneNumber"
+                    className="block text-sm font-semibold leading-6"
+                  >
+                    Phone number
+                  </label>
+                  <div className="mt-2.5">
+                    <input
+                      type="tel"
+                      id="phoneNumber"
+                      value={formData.phoneNumber}
+                      onChange={handleChange}
+                      autoComplete="tel"
+                      className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cws-bg-2 sm:text-sm sm:leading-6 text-black dark:text-slate-100 dark:bg-transparent"
+                    />
+                  </div>
+                </div>
+                <div className="sm:col-span-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-semibold leading-6"
+                  >
+                    Message
+                  </label>
+                  <div className="mt-2.5">
+                    <textarea
+                      name="message"
+                      id="message"
+                      required
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows={4}
+                      className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cws-bg-2 sm:text-sm sm:leading-6 text-black dark:text-slate-100 dark:bg-transparent"
+                    />
+                  </div>
                 </div>
               </div>
-              <div>
-                <label
-                  htmlFor="lastName"
-                  className="block text-sm font-semibold leading-6"
+              <div className="mt-8 flex justify-end">
+                <button
+                  type="submit"
+                  className="rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-slate-100 shadow-sm bg-gradient-to-r from-cws-primary/80 to-cws-bg-1/80 ring-cws-bg-1 hover:from-cws-primary/100 hover:to-cws-bg-1/100 hover:ring-1"
+                  disabled={ready === false}
                 >
-                  Last name
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    type="text"
-                    id="lastName"
-                    required
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    autoComplete="family-name"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cws-bg-2 sm:text-sm sm:leading-6 text-black dark:text-slate-100 dark:bg-transparent"
-                  />
-                </div>
-              </div>
-              <div className="sm:col-span-2">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-semibold leading-6"
-                >
-                  Email
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    autoComplete="email"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cws-bg-2 sm:text-sm sm:leading-6 text-black dark:text-slate-100 dark:bg-transparent"
-                  />
-                </div>
-              </div>
-              <div className="sm:col-span-2">
-                <label
-                  htmlFor="phoneNumber"
-                  className="block text-sm font-semibold leading-6"
-                >
-                  Phone number
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    type="tel"
-                    id="phoneNumber"
-                    value={formData.phoneNumber}
-                    onChange={handleChange}
-                    autoComplete="tel"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cws-bg-2 sm:text-sm sm:leading-6 text-black dark:text-slate-100 dark:bg-transparent"
-                  />
-                </div>
-              </div>
-              <div className="sm:col-span-2">
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-semibold leading-6"
-                >
-                  Message
-                </label>
-                <div className="mt-2.5">
-                  <textarea
-                    name="message"
-                    id="message"
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={4}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cws-bg-2 sm:text-sm sm:leading-6 text-black dark:text-slate-100 dark:bg-transparent"
-                  />
-                </div>
+                  Send message
+                </button>
               </div>
             </div>
-            <div className="mt-8 flex justify-end">
-              <button
-                type="submit"
-                className="rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-slate-100 shadow-sm bg-gradient-to-r from-cws-primary/90 to-cws-bg-1/90 ring-cws-bg-1 hover:from-cws-primary/100 hover:to-cws-bg-1/100"
-              >
-                Send message
-              </button>
-            </div>
-          </div>
-        </form>
+          </form>
+          <ContactConfirmation />
+        </div>
       </div>
     </div>
   );

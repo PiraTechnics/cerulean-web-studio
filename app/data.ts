@@ -30,6 +30,7 @@ export const contactInformation = {
   state: "CA",
   zip: "91401",
   email: "devin@ceruleanwebstudio.com",
+  botEmail: "autobot@ceruleanwebstudio.com",
   phone: "(760) 576-7555",
 };
 
