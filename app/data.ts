@@ -13,6 +13,10 @@ import {
   ViewColumnsIcon,
   WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline";
+import DevinYounge from "@/public/portfolio/DevinYounge.png";
+import Gelato1022 from "@/public/portfolio/1022Gelato.png";
+import BuyRule from "@/public/portfolio/BuyRule.png";
+import BardsBookshelf from "@/public/portfolio/BardsBookshelf.png";
 
 export const pageLinks = [
   { name: "Home", href: "/" },
@@ -187,3 +191,30 @@ export const packagePricing = {
     },
   ],
 };
+
+export const PortfolioCards = [
+  {
+    src: Gelato1022,
+    id: "1022gelato",
+    link: "https://sparkly-klepon-d0912d.netlify.app/",
+    alt: "1022 Cafe & Gelateria, in Oceanside, California",
+  },
+  {
+    src: BardsBookshelf,
+    id: "bardsbookshelf",
+    link: "https://bardsbookshelf.com/",
+    alt: "Bard's Bookshelf, a blog of verse and versatility",
+  },
+  {
+    src: DevinYounge,
+    id: "devinyounge",
+    link: "https://devinyounge.com",
+    alt: "Devin Younge, Full-Stack Web Developer Portfolio",
+  },
+  {
+    src: BuyRule,
+    id: "buyrule",
+    link: "https://gregarious-phoenix-51a442.netlify.app/",
+    alt: "Buy-Rule, Hyrule's one stop shop for adventuring gear and more",
+  },
+];
