@@ -2,7 +2,7 @@ import { ArrowRightCircleIcon } from "@heroicons/react/24/outline";
 
 export const GetStarted = () => {
   return (
-    <div className="bg-cws-bg-2/50 rounded-md">
+    <div id="get-started" className="bg-cws-bg-2/50 rounded-md">
       <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-around lg:px-8">
         <h2 className="text-3xl font-bold tracking-tight  sm:text-4xl text-slate-100">
           Ready to dive in?

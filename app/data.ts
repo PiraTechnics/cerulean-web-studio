@@ -1,14 +1,16 @@
 import {
+  PaintBrushIcon,
+  RocketLaunchIcon,
+  CurrencyDollarIcon,
+  ChatBubbleLeftRightIcon,
   CircleStackIcon,
   CodeBracketIcon,
   DevicePhoneMobileIcon,
   DocumentDuplicateIcon,
   DocumentTextIcon,
   GlobeAltIcon,
-  PaintBrushIcon,
   PencilSquareIcon,
   PresentationChartLineIcon,
-  RocketLaunchIcon,
   //ShoppingBagIcon,
   ViewColumnsIcon,
   WrenchScrewdriverIcon,
@@ -17,6 +19,9 @@ import DevinYounge from "@/public/portfolio/DevinYounge.png";
 import Gelato1022 from "@/public/portfolio/1022Gelato.png";
 import BuyRule from "@/public/portfolio/BuyRule.png";
 import BardsBookshelf from "@/public/portfolio/BardsBookshelf.png";
+import IdeaImg from "@/public/idea.svg";
+import BuildingImg from "@/public/building.svg";
+import FinishedImg from "@/public/finished.svg";
 
 export const pageLinks = [
   { name: "Home", href: "/" },
@@ -37,6 +42,65 @@ export const contactInformation = {
   botEmail: "autobot@ceruleanwebstudio.com",
   phone: "(760) 576-7555",
 };
+
+export const ourProcess = [
+  {
+    id: "processIdea",
+    label: "1. Share your Idea",
+    description:
+      "If you can imagine it, we can build it! Schedule a free consultation and we'll work with you to make your dream into a digital reality.",
+    imgSrc: IdeaImg,
+    imgAlt: "two people conversing with a lightbulb overhead",
+  },
+  {
+    id: "processBuild",
+    label: "2. We'll get to work on it",
+    description:
+      "Our agency will design, develop, and deploy your site, keeping you in the loop at every step, so you can be sure everything is built to your specification.",
+    imgSrc: BuildingImg,
+    imgAlt: "tman working on a computer, gears in the background",
+  },
+  {
+    id: "processEnjoy",
+    label: "3. Enjoy your website!",
+    description:
+      "Once it's done, we'll plug everything in and hand you the keys to your brand new website.",
+    imgSrc: FinishedImg,
+    imgAlt:
+      "man sitting cross-legged with a laptop, enjoying browing the internet",
+  },
+];
+
+export const highlights = [
+  {
+    id: "design",
+    label: "Bespoke Design",
+    icon: PaintBrushIcon as HeroIcon,
+    description:
+      "A unique web experience stands out amongst the rest. Templates are only a starting point for us -- never the end. Whether you prefer a minimal design, consider your website a canvas on which to paint, or something in between, we've got you covered.",
+  },
+  {
+    id: "performance",
+    label: "Speedy Performance",
+    icon: RocketLaunchIcon as HeroIcon,
+    description:
+      "First impressions are key -- studies show that users stay on a fast-loading website far more frequently than a slow one. That's why we build our web solutions with performance in mind, using the latest tools and coding best practices.",
+  },
+  {
+    id: "communication",
+    label: "Clear Communication",
+    icon: ChatBubbleLeftRightIcon as HeroIcon,
+    description:
+      "A successful business is built on trust, so we want to be sure to earn and keep yours. Throughout every step of the process we keep you as informed as you prefer, and make sure we are on the same page for design, changes, and timelines.",
+  },
+  {
+    id: "afforability",
+    label: "Affordable Options",
+    icon: CurrencyDollarIcon as HeroIcon,
+    description:
+      "A quality website doesn't have to break the bank. We offer afforable options for design, hosting, and maintainence, all in house. Choose from any of our packages, or consult for a customized offering.",
+  },
+];
 
 export const services = [
   {
