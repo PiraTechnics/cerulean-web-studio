@@ -1,5 +1,5 @@
-import { ThumbnailCard } from "../ui/components/thumbnail-card";
-import { PortfolioCards } from "@/app/data";
+import { ThumbnailCard } from "@/app/ui/components/thumbnail-card";
+import { portfolioCards } from "@/app/data";
 
 export default function Portfolio() {
   return (
@@ -17,7 +17,7 @@ export default function Portfolio() {
         </div>
       </div>
       <div className="bg-cws-bg-2/50 m-2 rounded-md p-8 sm:p-8 md:p-16 grid gap-6 md:gap-12 grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
-        {PortfolioCards.map((card) => {
+        {portfolioCards.map((card) => {
           return (
             <ThumbnailCard
               key={card.id}

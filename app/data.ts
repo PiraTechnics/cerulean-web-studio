@@ -22,6 +22,12 @@ import BardsBookshelf from "@/public/portfolio/BardsBookshelf.png";
 import IdeaImg from "@/public/idea.svg";
 import BuildingImg from "@/public/building.svg";
 import FinishedImg from "@/public/finished.svg";
+import OwnerProfilePicture from "@/public/devin-younge.jpg";
+import Bluesky from "@/app/ui/icons/bluesky";
+import Facebook from "@/app/ui/icons/facebook";
+import Instagram from "@/app/ui/icons/instagram";
+import LinkedIn from "@/app/ui/icons/linkedin";
+import Github from "@/app/ui/icons/github";
 
 export const pageLinks = [
   { name: "Home", href: "/" },
@@ -84,7 +90,7 @@ export const highlights = [
     label: "Speedy Performance",
     icon: RocketLaunchIcon as HeroIcon,
     description:
-      "First impressions are key -- studies show that users stay on a fast-loading website far more frequently than a slow one. That's why we build our web solutions with performance in mind, using the latest tools and coding best practices.",
+      "First impressions are key -- studies show that users stay on a fast-loading website far more frequently than a slow one. That's why we build our web solutions with performance in mind, using the latest tools and best coding practices.",
   },
   {
     id: "communication",
@@ -98,9 +104,53 @@ export const highlights = [
     label: "Affordable Options",
     icon: CurrencyDollarIcon as HeroIcon,
     description:
-      "A quality website doesn't have to break the bank. We offer afforable options for design, hosting, and maintainence, all in house. Choose from any of our packages, or consult for a customized offering.",
+      "A quality website doesn't have to break the bank. We offer afforable options for design, hosting, and maintainence, all in-house. Choose from a variety of packages, or consult with us for a customized offering.",
   },
 ];
+
+export const about =
+  "Cerulean Web Studio is a web design agency based in California's San Fernando Valley. Serving SoCal & beyond since 2023, we consider it our mission to provide the highest quality modern websites and applications for our customers.";
+
+export const ownerInfo = {
+  name: "Devin Younge",
+  title: "Owner & Lead Developer",
+  description:
+    "Front-end Web Developer & Designer with a background in enterprise software, and a BSc in Computer Science (University of Colorado - Boulder, 2012). Devin has also led a near-decade career as an entertainer, providing live commentary for professional video game (esports) competitions, under the stage name 'PiraTechnics'. He also enjoys fantasy fiction and writing for tabletop role-playing games.",
+  profile: OwnerProfilePicture,
+  profileAlt: "Man wearing glasses in slight profile at computer desk",
+  socials: [
+    {
+      id: "owner-linkedin",
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/devinyounge/",
+      icon: LinkedIn,
+    },
+    {
+      id: "owner-github",
+      name: "Github",
+      link: "https://github.com/PiraTechnics",
+      icon: Github,
+    },
+    {
+      id: "owner-bluesky",
+      name: "Bluesky",
+      link: "https://bsky.app/profile/piratechnics.bsky.social",
+      icon: Bluesky,
+    },
+    {
+      id: "owner-facebook",
+      name: "Facebook",
+      link: "https://www.facebook.com/devin.younge/",
+      icon: Facebook,
+    },
+    {
+      id: "owner-instragram",
+      name: "Instagram",
+      link: "https://www.instagram.com/piratechnics/",
+      icon: Instagram,
+    },
+  ],
+};
 
 export const services = [
   {
@@ -256,7 +306,7 @@ export const packagePricing = {
   ],
 };
 
-export const PortfolioCards = [
+export const portfolioCards = [
   {
     src: Gelato1022,
     id: "1022gelato",
