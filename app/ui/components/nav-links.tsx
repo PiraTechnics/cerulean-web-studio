@@ -13,7 +13,7 @@ export const NavLinks = () => {
       {pageLinks.map((link) => {
         return (
           <Link
-            key={link.name}
+            key={"home-" + link.name}
             href={link.href}
             className={clsx(
               "font-sans lg:text-lg xl:text-xl py-5 font-semibold hover:text-[#66e4e9]",
