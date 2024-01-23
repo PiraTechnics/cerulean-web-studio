@@ -1,6 +1,6 @@
-import { Mission } from "@/app/ui/sections/mission";
 import { OwnerProfile } from "@/app/ui/sections/owner-profile";
 import { about } from "@/app/data";
+import { Pitch } from "../ui/sections/pitch";
 
 export default function About() {
   return (
@@ -13,7 +13,10 @@ export default function About() {
           <p className="mt-6 text-lg leading-8">{about}</p>
         </div>
       </section>
-      <Mission />
+      <section className="text-center text-slate-100 bg-cws-bg-2/50 my-4 sm:my-6 rounded-md py-16 px-8 sm:px-32 md:px-16 lg:px-4">
+        <div className="text-5xl sm:text-4xl mb-16">Our Mission</div>
+        <Pitch />
+      </section>
       <OwnerProfile />
     </div>
   );

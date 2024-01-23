@@ -1,5 +1,3 @@
-"use client";
-
 import { MobileMenu } from "./mobile-menu";
 //import { Toggle } from "./darkmode-toggle";
 

@@ -8,6 +8,7 @@ import FullLogo from "@/public/cerulean.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { contactInformation, pageLinks } from "@/app/data";
+import { CeruleanLogo } from "../icons/cerulean-logo";
 
 const socials = [
   {
@@ -31,8 +32,8 @@ export const Footer = () => {
         className="grid lg:grid-cols-4 lg:grid-rows-1 md:grid-cols-2 md:grid-rows-2 grid-rows-4 grid-cols-1 my-2"
       >
         <div id="footer-about" className="mb-4 justify-self-center text-center">
-          <div className="mb-4 p-1 mx-auto rounded-full bg-white/60 w-56 md:w-48 lg:w-40">
-            <Image src={FullLogo} alt="Cerulean Web Studio" />
+          <div className="mb-3 py-1 px-3 mx-auto rounded-full bg-white/60 w-48 md:w-44 lg:w-40">
+            <CeruleanLogo />
           </div>
           <p className="px-8 sm:px-32 md:px-16 lg:text-sm lg:px-10">
             We are a full service web agency passionate about delivering an
@@ -67,7 +68,7 @@ export const Footer = () => {
           </p>
         </div>
         <div id="footer-socials" className="justify-self-center text-center">
-          <div className="text-2xl my-4">Contact</div>
+          <div className="text-2xl my-4">Contact Us</div>
           <div className="flex gap-2 my-4 justify-center">
             {socials.map((link) => {
               return (

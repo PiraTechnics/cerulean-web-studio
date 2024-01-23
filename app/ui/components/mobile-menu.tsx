@@ -1,3 +1,5 @@
+"use client";
+
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { CeruleanLogo } from "@/app/ui/icons/cerulean-logo";
@@ -9,6 +11,8 @@ import clsx from "clsx";
 export const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+
+  //console.log(pathname);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -65,18 +69,21 @@ export const MobileMenu = () => {
                   leaveFrom="translate-x-0"
                   leaveTo="-translate-x-full"
                 >
-                  <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
-                    <div className="flex h-full flex-col overflow-y-hidden bg-slate-100 border-slate-300 border-2 rounded-r-md py-6 shadow-xl">
-                      <Dialog.Title className="px-8 scale-110">
+                  <Dialog.Panel className="pointer-events-auto w-screen max-w-fit">
+                    <div className="flex h-full flex-col overflow-y-hidden bg-cws-secondary border-slate-300 border-2 rounded-r-md py-6 px-12 shadow-xl">
+                      <Dialog.Title className="scale-125 mx-auto mb-4">
                         <CeruleanLogo />
                       </Dialog.Title>
                       <ul className="relative flex flex-col text-center gap-4 mt-6 flex-1 px-4 sm:px-6">
                         {pageLinks.map((entry) => {
                           return (
-                            <li key={"mobile-" + entry.name}>
+                            <li
+                              key={"mobile-" + entry.name}
+                              className="text-slate-700"
+                            >
                               <button onClick={handleClick}>
                                 <Link
-                                  className={clsx("text-2xl text-slate-700", {
+                                  className={clsx("text-2xl", {
                                     "text-cws-bg-1": pathname === entry.href,
                                   })}
                                   href={entry.href}
@@ -84,7 +91,7 @@ export const MobileMenu = () => {
                                   {entry.name}
                                 </Link>
                               </button>
-                              <hr className="border-slate-400 w-1/2 mx-auto my-2" />
+                              <hr className="border-slate-400 mx-auto my-2" />
                             </li>
                           );
                         })}
