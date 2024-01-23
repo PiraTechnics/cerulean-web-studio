@@ -38,22 +38,24 @@ export const OurServices = () => {
           })}
         </div>
       </div>
-      <div className="my-16 flex flex-col gap-8 lg:w-5/6 xl:w-2/3 mx-auto">
+      <ul className="my-24 p-8 flex flex-col gap-8 bg-cws-bg-2/50 rounded-lg ">
         {services.map((entry) => {
           return (
-            <div
+            <li
               key={`${entry.name}-content`}
               id={entry.link}
-              className="bg-cws-bg-2/50 rounded-xl p-8 shadow-lg"
+              className="hover:bg-cws-bg-2/80 p-6 rounded-xl"
             >
-              <div className="text-3xl font-semibold mb-4 underline tracking-wide">
+              <div className="text-3xl text-white mb-4 tracking-wide">
                 {entry.name}
               </div>
-              <div className="text-lg text-slate-200">{entry.description}</div>
-            </div>
+              <div className="sm:text-lg text-slate-200">
+                {entry.description}
+              </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </section>
   );
 };

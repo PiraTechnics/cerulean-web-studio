@@ -185,7 +185,7 @@ export const services = [
     link: "development",
     icon: CodeBracketIcon as HeroIcon,
     description:
-      "Need something a little more complex than our standard offerings? We can build it for you! Whether you need a perfect invoicing dystem, a customer relationship management dashboard, E-Commerce for your business or more, Cerulean Web Studio is here to help. Call or Email us for a free consultation and we'll take it from there.",
+      "Need something a little more complex than our standard offerings? We can build it for you! Whether you need a perfect invoicing system, a customer relationship management dashboard, E-Commerce for your business or more, Cerulean Web Studio is here to help. Call or Email us for a free consultation and we'll take it from there.",
   },
   {
     name: "Managed Hosting",
