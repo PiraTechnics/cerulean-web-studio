@@ -47,6 +47,17 @@ export const contactInformation = {
   email: "devin@ceruleanwebstudio.com",
   botEmail: "autobot@ceruleanwebstudio.com",
   phone: "(760) 576-7555",
+  socials: [
+    {
+      id: "contact-linkedin",
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/devinyounge/",
+      icon: LinkedIn,
+    },
+    { id: "contact-facebook", name: "Facebook", href: "#", icon: Facebook },
+    { id: "contact-bluesky", name: "Bluesky", href: "#", icon: Bluesky },
+    { id: "contact-instagram", name: "Instagram", href: "#", icon: Instagram },
+  ],
 };
 
 export const ourProcess = [

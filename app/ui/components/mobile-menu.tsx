@@ -12,8 +12,6 @@ export const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  //console.log(pathname);
-
   const handleClick = () => {
     setIsOpen(!isOpen);
   };

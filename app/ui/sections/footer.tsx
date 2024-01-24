@@ -3,10 +3,8 @@ import Facebook from "@/app/ui/icons/facebook";
 import Instagram from "@/app/ui/icons/instagram";
 import LinkedIn from "@/app/ui/icons/linkedin";
 import Bluesky from "@/app/ui/icons/bluesky";
-import FullLogo from "@/public/cerulean.svg";
 
 import Link from "next/link";
-import Image from "next/image";
 import { contactInformation, pageLinks } from "@/app/data";
 import { CeruleanLogo } from "../icons/cerulean-logo";
 
@@ -22,7 +20,6 @@ const socials = [
 ];
 
 const today = new Date();
-//should this be declared IN Footer? not sure if/how much overhead it adds or how frequently updated
 
 export const Footer = () => {
   return (
@@ -70,17 +67,17 @@ export const Footer = () => {
         <div id="footer-socials" className="justify-self-center text-center">
           <div className="text-2xl my-4">Contact Us</div>
           <div className="flex gap-2 my-4 justify-center">
-            {socials.map((link) => {
+            {contactInformation.socials.map((entry) => {
               return (
                 <a
-                  key={link.name}
-                  href={link.href}
-                  aria-label={link.name}
+                  key={entry.id}
+                  href={entry.href}
+                  aria-label={entry.name}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-1.5 rounded-full bg-slate-700 hover:bg-[#00c4cc]"
                 >
-                  {link.icon}
+                  <entry.icon />
                 </a>
               );
             })}
