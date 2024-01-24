@@ -24,6 +24,7 @@ import {
 import { contactInformation } from "@/app/data";
 import { Fragment, ChangeEvent, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { Spinner } from "../components/spinner";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -33,7 +34,7 @@ export const ContactForm = () => {
     phoneNumber: "",
     message: "",
   });
-  const [ready, setReady] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleChange = (
@@ -45,7 +46,7 @@ export const ContactForm = () => {
 
   async function handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
-    setReady(false); //loading state, disable submit button
+    setLoading(true); //loading state, disable submit button
 
     console.log(formData);
 
@@ -70,7 +71,7 @@ export const ContactForm = () => {
     });
 
     setModalOpen(true); //open confirmation dialog
-    setReady(true); //re-enable submit button when done
+    setLoading(false); //re-enable submit button when done
   }
 
   const ContactConfirmation = () => {
@@ -322,9 +323,16 @@ export const ContactForm = () => {
                 <button
                   type="submit"
                   className="rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-slate-100 shadow-sm bg-gradient-to-r from-cws-primary/80 to-cws-bg-1/80 ring-cws-bg-1 hover:from-cws-primary/100 hover:to-cws-bg-1/100 hover:ring-1"
-                  disabled={ready === false}
+                  disabled={loading === true}
                 >
-                  Send message
+                  {loading === true ? (
+                    <div className="flex gap-2 items-center">
+                      <Spinner />
+                      <div>Sending...</div>
+                    </div>
+                  ) : (
+                    "Send message"
+                  )}
                 </button>
               </div>
             </div>
