@@ -1,35 +1,33 @@
-import {
-  CheckIcon,
-  PlusIcon,
-  ArrowRightCircleIcon,
-} from "@heroicons/react/24/outline";
+import { CheckIcon, PlusIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { RadioGroup } from "@headlessui/react";
 import clsx from "clsx";
 
 type pricingProps = {
+  header: string;
   featureChecklist: string[];
-  pricing: {
-    header: string;
-    options: Array<{
-      value: string;
-      label: string;
-      price1: number;
-      subLabel1: string;
-      price2?: number;
-      subLabel2?: string;
-    }>;
-  };
+  options: Array<{
+    value: string;
+    label: string;
+    price1: number;
+    subLabel1: string;
+    price2?: number;
+    subLabel2?: string;
+  }>;
 };
 
-export const PackagePricing = ({ featureChecklist, pricing }: pricingProps) => {
-  const [frequency, setFrequency] = useState(pricing.options[0]);
+export const PackagePricing = ({
+  header,
+  featureChecklist,
+  options,
+}: pricingProps) => {
+  const [frequency, setFrequency] = useState(options[0]);
 
   return (
     <div className="px-6 py-16 sm:py-24 lg:flex lg:items-center lg:justify-end lg:bg-none lg:px-0 lg:pl-8">
       <div className="mx-auto w-full max-w-lg space-y-8 lg:mx-0">
         <div className="mb-8">
-          <h2 className="text-white text-center text-2xl">{pricing.header}</h2>
+          <h2 className="text-white text-center text-2xl">{header}</h2>
           <div className="py-4 flex justify-center">
             <RadioGroup
               value={frequency}
@@ -39,14 +37,14 @@ export const PackagePricing = ({ featureChecklist, pricing }: pricingProps) => {
               <RadioGroup.Label className="sr-only">
                 Payment frequency
               </RadioGroup.Label>
-              {pricing.options.map((option) => (
+              {options.map((option) => (
                 <RadioGroup.Option
                   key={option.value}
                   value={option}
                   className={({ checked }) =>
                     clsx(
                       checked ? "bg-cws-bg-2/90 text-white" : "text-black",
-                      "cursor-pointer rounded-full px-2.5 py-1"
+                      "cursor-pointer rounded-full px-2.5 py-1",
                     )
                   }
                 >

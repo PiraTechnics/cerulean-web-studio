@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "./ui/sections/header";
 import { Footer } from "./ui/sections/footer";
 import { Providers } from "./providers";
+import { SEO } from "./data";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,9 +19,9 @@ const baskerville = Libre_Baskerville({
 });
 
 export const metadata: Metadata = {
-  title: "Cerulean Web Studio",
-  description:
-    "Web design and development services agency based in Sherman Oaks, California.",
+  title: SEO.defaultTitle + " | " + SEO.siteName,
+  description: SEO.defaultDescription,
+  keywords: SEO.defaultTags,
 };
 
 export default function RootLayout({

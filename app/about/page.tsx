@@ -1,6 +1,11 @@
 import { OwnerProfile } from "@/app/ui/sections/owner-profile";
-import { about } from "@/app/data";
+import { SEO, about } from "@/app/data";
 import { Pitch } from "../ui/sections/pitch";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us" + " | " + SEO.siteName,
+};
 
 export default function About() {
   return (

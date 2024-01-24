@@ -1,5 +1,10 @@
 import { ThumbnailCard } from "@/app/ui/components/thumbnail-card";
-import { portfolioCards } from "@/app/data";
+import { SEO, portfolioCards } from "@/app/data";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Portfolio" + " | " + SEO.siteName,
+};
 
 export default function Portfolio() {
   return (

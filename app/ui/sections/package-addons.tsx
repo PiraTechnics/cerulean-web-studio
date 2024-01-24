@@ -1,18 +1,6 @@
-type addOnsProps = {
-  addOns: Array<{
-    name: string;
-    value: string;
-    price1: number;
-    label1?: string;
-    price2?: number;
-    label2?: string;
-    icon: HeroIcon;
-    description: string;
-    subDescription?: string;
-  }>;
-};
+import { packagePricing } from "@/app/data";
 
-export const AddOns = ({ addOns }: addOnsProps) => {
+export const AddOns = () => {
   return (
     <section className="my-4">
       <div className="bg-cws-bg-2/60 w-full rounded-lg text-white px-1 sm:px-6 lg:static lg:px-8 py-12">
@@ -47,7 +35,7 @@ export const AddOns = ({ addOns }: addOnsProps) => {
             </tr>
           </thead>
           <tbody>
-            {addOns.map((entry) => {
+            {packagePricing.addOns.map((entry) => {
               return (
                 <tr key={entry.value}>
                   <td className="max-w-0 py-5 pl-4 pr-3 text-sm sm:pl-0">

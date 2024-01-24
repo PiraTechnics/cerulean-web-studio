@@ -1,36 +1,10 @@
+"use client";
+
 import { PackagePricing } from "./package-pricing";
 import { PackageDetails } from "./package-details";
+import { packageDetails, packagePricing } from "@/app/data";
 
-type PackageProps = {
-  header: {
-    superscript: string;
-    title: string;
-  };
-  features: Array<{
-    name: string;
-    icon: HeroIcon;
-    description: string;
-  }>;
-  featureChecklist: string[];
-  pricing: {
-    header: string;
-    options: Array<{
-      value: string;
-      label: string;
-      price1: number;
-      subLabel1: string;
-      price2?: number;
-      subLabel2?: string;
-    }>;
-  };
-};
-
-export const PricePackage = ({
-  header,
-  features,
-  featureChecklist,
-  pricing,
-}: PackageProps) => {
+export const PricePackage = () => {
   return (
     <section className="mt-2 mb-8">
       <div
@@ -41,10 +15,14 @@ export const PricePackage = ({
           id="content-container"
           className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2"
         >
-          <PackageDetails header={header} features={features} />
+          <PackageDetails
+            header={packageDetails.header}
+            features={packageDetails.features}
+          />
           <PackagePricing
-            featureChecklist={featureChecklist}
-            pricing={pricing}
+            header={packagePricing.header}
+            featureChecklist={packagePricing.featureChecklist}
+            options={packagePricing.options}
           />
         </div>
       </div>

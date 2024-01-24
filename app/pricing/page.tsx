@@ -1,9 +1,12 @@
-"use client";
-
-import { packageDetails, packagePricing } from "@/app/data";
+import { SEO } from "@/app/data";
 import { PricePackage } from "@/app/ui/sections/package";
 import { AddOns } from "@/app/ui/sections/package-addons";
 import { GetStarted } from "@/app/ui/sections/get-started";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pricing" + " | " + SEO.siteName,
+};
 
 export default function Pricing() {
   return (
@@ -22,13 +25,8 @@ export default function Pricing() {
           </p>
         </div>
       </div>
-      <PricePackage
-        header={packageDetails.header}
-        features={packageDetails.features}
-        featureChecklist={packageDetails.featureChecklist}
-        pricing={packagePricing}
-      />
-      <AddOns addOns={packagePricing.addOns} />
+      <PricePackage />
+      <AddOns />
       <GetStarted />
     </section>
   );

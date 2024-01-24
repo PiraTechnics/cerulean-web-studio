@@ -29,6 +29,23 @@ import Instagram from "@/app/ui/icons/instagram";
 import LinkedIn from "@/app/ui/icons/linkedin";
 import Github from "@/app/ui/icons/github";
 
+export const baseURL = "https://ceruleanwebstudio.com";
+export const SEO = {
+  siteName: "Cerulean Web Studio",
+  defaultTitle: "Los Angeles Web Design Company",
+  defaultDescription:
+    "Cerulean Web Studio is a web design company based in Los Angeles, CA. We craft better websites to help small businesses and creatives drive traffic and interest in their brands.",
+  defaultTags: [
+    "web designer near me",
+    " web design company los angeles",
+    " digital marketing agency",
+    " website hosting services",
+    " website development",
+    " small buisness web design",
+    " web design company",
+  ],
+};
+
 export const pageLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
@@ -48,7 +65,7 @@ export const contactInformation = {
   botEmail: "autobot@ceruleanwebstudio.com",
   phone: "(760) 576-7555",
   socials: [
-    {
+    /*     {
       id: "contact-linkedin",
       name: "LinkedIn",
       href: "https://www.linkedin.com/in/devinyounge/",
@@ -56,7 +73,7 @@ export const contactInformation = {
     },
     { id: "contact-facebook", name: "Facebook", href: "#", icon: Facebook },
     { id: "contact-bluesky", name: "Bluesky", href: "#", icon: Bluesky },
-    { id: "contact-instagram", name: "Instagram", href: "#", icon: Instagram },
+    { id: "contact-instagram", name: "Instagram", href: "#", icon: Instagram }, */
   ],
 };
 
@@ -245,14 +262,6 @@ export const packageDetails = {
         "Includes a lightweight Content Management System (CMS) tailored to your needs, making editing content a breeze!",
     },
   ],
-  featureChecklist: [
-    "Full Custom Design",
-    "High Performance",
-    "Mobile & Desktop",
-    "SEO Friendly",
-    "On-Call Support",
-    "Affordable Add-ons",
-  ],
 };
 
 export const packagePricing = {
@@ -272,6 +281,14 @@ export const packagePricing = {
       price1: 149,
       subLabel1: "Per Month",
     },
+  ],
+  featureChecklist: [
+    "Full Custom Design",
+    "High Performance",
+    "Mobile & Desktop",
+    "SEO Friendly",
+    "On-Call Support",
+    "Affordable Add-ons",
   ],
   addOns: [
     /* Remove E-Commerce until ready to offer service
