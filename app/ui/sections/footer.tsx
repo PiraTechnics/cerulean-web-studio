@@ -67,7 +67,7 @@ export const Footer = () => {
         <div id="footer-socials" className="justify-self-center text-center">
           <div className="text-2xl my-4">Contact Us</div>
           <div className="flex gap-2 my-4 justify-center">
-            {contactInformation.socials.map((entry) => {
+            {/*             {contactInformation.socials.map((entry) => {
               return (
                 <a
                   key={entry.id}
@@ -80,7 +80,7 @@ export const Footer = () => {
                   <entry.icon />
                 </a>
               );
-            })}
+            })} */}
           </div>
           <div className="ps-6 text-start">
             <div className="mb-2">
