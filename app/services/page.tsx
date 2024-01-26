@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Services() {
   return (
-    <div className="mt-32 mb-8">
+    <div className="mt-16 mb-8">
       <OurServices />
       <GetStarted />
     </div>

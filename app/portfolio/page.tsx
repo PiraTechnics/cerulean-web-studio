@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function Portfolio() {
   return (
     <section className="mb-4 lg:mb-8">
-      <div className="mt-16 py-8 sm:py-12 text-white">
+      <div className="my-10 text-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <p className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">

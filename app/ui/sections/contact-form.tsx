@@ -145,7 +145,7 @@ export const ContactForm = () => {
   return (
     <div
       id="margin-wrapper"
-      className="relative isolate bg-cws-bg-2/30 rounded-lg mt-24 text-slate-100"
+      className="relative isolate bg-cws-bg-2/30 rounded-lg my-4 text-slate-100"
     >
       <div
         id="content-container"
