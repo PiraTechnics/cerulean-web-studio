@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Logo from "@/public/CWS-title-only.svg";
+import Logo from "@/public/CWS-title-only.png";
 
 export const CeruleanLogo = () => {
   return (

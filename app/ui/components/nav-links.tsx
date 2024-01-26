@@ -16,7 +16,7 @@ export const NavLinks = () => {
             key={"home-" + link.name}
             href={link.href}
             className={clsx(
-              "font-sans lg:text-lg xl:text-xl py-5 font-semibold hover:text-[#66e4e9]",
+              "font-sans lg:text-xl py-6 font-semibold hover:text-[#66e4e9]",
               {
                 "text-[#00c4cc] border-b-4 border-[#00c4cc]":
                   pathname === link.href,
