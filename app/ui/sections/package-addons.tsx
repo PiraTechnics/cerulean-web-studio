@@ -9,7 +9,7 @@ export const AddOns = () => {
             Customize your Package
           </h2>
           <p className="mt-2 sm:text-lg text-slate-100">
-            With optional add-ons for Flat-Rate & Subscription plans
+            With optional add-ons for Flat-Rate & Monthly Payment plans
           </p>
           <p className="text-sm text-slate-200">
             *Listed prices are estimates only
@@ -27,10 +27,10 @@ export const AddOns = () => {
                 Name
               </th>
               <th scope="col" className="py-3.5 pl-3 pr-4 text-center sm:pr-0">
-                Flat Cost
+                Flat Rate
               </th>
               <th scope="col" className="py-3.5 pl-3 pr-4 text-center sm:pr-0">
-                Subscription Cost
+                Monthly Rate
               </th>
             </tr>
           </thead>

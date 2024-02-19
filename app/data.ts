@@ -274,12 +274,14 @@ export const packagePricing = {
       subLabel1: "One-Time",
       price2: 5,
       subLabel2: "Per Month",
+      desc: "Save 13%* on the total with a flat-rate plan!",
     },
     {
-      value: "subscription",
-      label: "Subscription",
+      value: "monthlyrate",
+      label: "Monthly Rate",
       price1: 149,
       subLabel1: "Per Month",
+      desc: "Pay over time with a 12 month contract!",
     },
   ],
   featureChecklist: [
@@ -304,7 +306,7 @@ export const packagePricing = {
       name: "Blog Section",
       value: "blog",
       price1: 200,
-      price2: 40,
+      price2: 20,
       label2: "Per Month",
       icon: DocumentTextIcon as HeroIcon,
       description:
@@ -314,6 +316,8 @@ export const packagePricing = {
       name: "Extra Page",
       value: "extrapage",
       price1: 100,
+      price2: 10,
+      label2: "Per Month",
       icon: DocumentDuplicateIcon as HeroIcon,
       description:
         "Add more content to your site! Additional design consultation provided at no charge.",
@@ -322,7 +326,7 @@ export const packagePricing = {
       name: "Domain Name",
       value: "manageddomain",
       price1: 30,
-      price2: 4,
+      price2: 3,
       label1: "Annually",
       label2: "Per Month",
       icon: GlobeAltIcon as HeroIcon,

@@ -13,6 +13,7 @@ type pricingProps = {
     subLabel1: string;
     price2?: number;
     subLabel2?: string;
+    desc: string;
   }>;
 };
 
@@ -26,7 +27,7 @@ export const PackagePricing = ({
   return (
     <div className="px-6 py-16 sm:py-24 lg:flex lg:items-center lg:justify-end lg:bg-none lg:px-0 lg:pl-8">
       <div className="mx-auto w-full max-w-lg space-y-8 lg:mx-0">
-        <div className="mb-8">
+        <div className="">
           <h2 className="text-white text-center text-2xl">{header}</h2>
           <div className="py-4 flex justify-center">
             <RadioGroup
@@ -37,6 +38,7 @@ export const PackagePricing = ({
               <RadioGroup.Label className="sr-only">
                 Payment frequency
               </RadioGroup.Label>
+
               {options.map((option) => (
                 <RadioGroup.Option
                   key={option.value}
@@ -73,8 +75,8 @@ export const PackagePricing = ({
           ))}
         </ul>
         <div className="text-sm text-slate-300 text-center mt-2">
-          *Prices are estimates only. Subscription plan minimum 6 month
-          contract.
+          *Prices are estimates only. Savings based on standard package rates
+          with 1 year hosting.
         </div>
       </div>
     </div>
@@ -89,12 +91,14 @@ type priceProps = {
     subLabel1: string;
     price2?: number;
     subLabel2?: string;
+    desc: string;
   };
 };
 
 const PriceOption = ({ option }: priceProps) => {
   return (
     <div>
+      <h2 className="text-center mb-4 -mt-4 text-lg italic">{option.desc}</h2>
       <h2 className="sr-only">Price</h2>
       <p className="relative flex flex-col sm:flex-row justify-center gap-4 sm:gap-16">
         <span className="flex flex-col text-center">
